@@ -29,8 +29,9 @@ export const DivideLineGray = styled.div`
   margin: 20px 0 40px 0;
 `;
 
-export const WrapperTitle = styled.h2`
+export const WrapperTitle = styled.div`
   font-size: 26px;
+  margin-bottom: 20px;
 
   > span {
     font-size: 14px;

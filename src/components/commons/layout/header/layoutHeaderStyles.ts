@@ -6,6 +6,9 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   border-bottom: 1px solid #eeeeee;
+  background-color: white;
+  position: fixed;
+  top: 0;
 `;
 
 export const Wrapper = styled.div`
@@ -14,7 +17,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 1024px;
-  padding: 20px 0;
+  padding: 16px 0;
 
   > div span {
     font-size: 14px;

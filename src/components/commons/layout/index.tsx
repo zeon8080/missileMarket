@@ -7,10 +7,11 @@ interface ILayoutPros {
 
 const Container = styled.div`
   width: 100%;
-  /* height: 100vh; */
 `;
 
-const LayoutBody = styled.div``;
+const LayoutBody = styled.div`
+  padding-top: 100px;
+`;
 
 export default function Layout(props: ILayoutPros): JSX.Element {
   return (
