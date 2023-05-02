@@ -18,13 +18,13 @@ export const Wrapper = styled.div`
 
 export const DivideLine = styled.div`
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid #888888;
   margin: 40px 0;
 `;
 
 export const DivideLineGray = styled.div`
   width: 100%;
-  border: 0.5px solid gray;
+  border: 0.5px solid #eeeeee;
   margin: 40px 0;
 `;
 
