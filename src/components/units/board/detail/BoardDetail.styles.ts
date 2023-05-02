@@ -60,8 +60,8 @@ export const ImgBox = styled.div`
   width: 100%;
 
   > img {
-    width: 500px;
-    /* height: 300px; */
+    width: 400px;
+    height: 400px;
     object-fit: contain;
     margin-bottom: 10px;
   }

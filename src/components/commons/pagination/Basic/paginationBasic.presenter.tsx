@@ -6,7 +6,7 @@ export default function PaginationBasicUI(
 ): JSX.Element {
   return (
     <div>
-      <PageNum onClick={props.onClickPrevPage}>{`<`}</PageNum>
+      <PageNum onClick={props.onClickPrevPage}>{`이전 페이지`}</PageNum>
       {new Array(10).fill("").map(
         (_, index) =>
           index + props.startPage <= props.lastPage && (
@@ -16,7 +16,7 @@ export default function PaginationBasicUI(
               onClick={props.onClickPage}
               style={{
                 color:
-                  index + props.startPage === props.activePage ? "#8cf2b3" : "",
+                  index + props.startPage === props.activePage ? "#006fff" : "",
               }}
             >
               {index + props.startPage}
@@ -27,7 +27,7 @@ export default function PaginationBasicUI(
         onClick={props.onClickNextPage}
         disabled={props.startPage + 10 <= props.lastPage ? false : true}
       >
-        {`>`}
+        {`다음 페이지`}
       </PageNum>
     </div>
   );

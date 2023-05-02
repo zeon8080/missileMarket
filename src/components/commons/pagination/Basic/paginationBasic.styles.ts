@@ -1,11 +1,14 @@
 import styled from "@emotion/styled";
 
 export const PageNum = styled.button`
-  margin: 0px 10px;
+  margin: 20px 10px;
   cursor: pointer;
   border: none;
-  color: #2fc669;
-  background-color: #0d110f;
-  width: 30px;
+  background-color: white;
+  color: black;
   font-size: 20px;
+
+  :hover {
+    color: #006fff;
+  }
 `;
