@@ -27,6 +27,7 @@ export const SearchBox = styled.div`
   > input {
     width: 600px;
     height: 40px;
+    padding: 0 10px;
   }
 `;
 
