@@ -11,6 +11,7 @@ import {
 } from "../../../../commons/types/generated/types";
 import CommentsWriteUI from "./CommentsWrite.presenter";
 import { Modal } from "antd";
+import { FETCH_COMMENT } from "../commentsList/CommentList.queries";
 
 export default function CommentsWrite(props: ICommentsWrite): JSX.Element {
   const router = useRouter();
@@ -64,12 +65,12 @@ export default function CommentsWrite(props: ICommentsWrite): JSX.Element {
               rating: 1,
             },
           },
-          // refetchQueries: [
-          //   {
-          //     query: FETCH_COMMENT,
-          //     variables: { boardId: router.query.boardId },
-          //   },
-          // ],
+          refetchQueries: [
+            {
+              query: FETCH_COMMENT,
+              variables: { boardId: router.query.boardId },
+            },
+          ],
         });
       } catch (error) {
         if (error instanceof Error)
@@ -105,12 +106,12 @@ export default function CommentsWrite(props: ICommentsWrite): JSX.Element {
           password,
           boardCommentId: String(props.el?._id),
         },
-        // refetchQueries: [
-        //   {
-        //     query: FETCH_COMMENT,
-        //     variables: { boardId: router.query.boardId },
-        //   },
-        // ],
+        refetchQueries: [
+          {
+            query: FETCH_COMMENT,
+            variables: { boardId: router.query.boardId },
+          },
+        ],
       });
 
       props.setIsEdit?.(false);

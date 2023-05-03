@@ -1,5 +1,4 @@
 import { IBoardDetailUI } from "./BoardDetail.types";
-import { getDate } from "../../../../commons/libraries/util";
 import * as S from "./BoardDetail.styles";
 import ReactPlayer from "react-player";
 
@@ -11,7 +10,7 @@ export default function BoardDetailUI(props: IBoardDetailUI) {
           <span>{props.data?.fetchBoard?.title}</span>
           <S.UserInfo>
             <span>{props.data?.fetchBoard?.writer}</span>
-            <span>{getDate(props.data?.fetchBoard?.createdAt)}</span>
+            <span>{props.data?.fetchBoard?.createdAt.slice(0, 10)}</span>
           </S.UserInfo>
         </S.Top>
         <S.DivideLine></S.DivideLine>
