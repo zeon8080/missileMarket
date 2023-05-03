@@ -23,7 +23,7 @@ export default function BoardList(): JSX.Element {
   >(FETCH_BOARDS_COUNT);
   const [keyword, setKeyword] = useState("");
 
-  const onClickMoveBoard = (): void => {
+  const onClickBoardWrite = (): void => {
     void router.push("/boards/new");
   };
 
@@ -45,7 +45,7 @@ export default function BoardList(): JSX.Element {
       data={data}
       refetch={refetch}
       count={dataBoardsCount?.fetchBoardsCount}
-      onClickMoveBoard={onClickMoveBoard}
+      onClickBoardWrite={onClickBoardWrite}
       onClickMoveBoardDetail={onClickMoveBoardDetail}
       onChangeSearch={onChangeSearch}
       keyword={keyword}

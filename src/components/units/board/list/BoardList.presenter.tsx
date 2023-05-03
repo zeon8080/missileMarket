@@ -13,6 +13,7 @@ export default function BoardListUI(props: IBoardListsUI) {
             placeholder="검색"
             onChange={props.onChangeSearch}
           />
+          <button onClick={props.onClickBoardWrite}>게시글 등록</button>
         </S.SearchBox>
         <S.ListMiddle>
           {props.data?.fetchBoards.map((el) => (

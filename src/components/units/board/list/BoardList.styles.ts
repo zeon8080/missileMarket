@@ -26,8 +26,19 @@ export const SearchBox = styled.div`
 
   > input {
     width: 600px;
-    height: 40px;
+    height: 46px;
     padding: 0 10px;
+  }
+
+  > button {
+    border: none;
+    width: 140px;
+    height: 50px;
+    text-align: center;
+    color: white;
+    background-color: #006fff;
+    cursor: pointer;
+    margin-left: 10px;
   }
 `;
 

@@ -7,7 +7,7 @@ import type {
 
 export interface IBoardListsUI {
   data?: Pick<IQuery, "fetchBoards">;
-  onClickMoveBoard: () => void;
+  onClickBoardWrite: () => void;
   onClickMoveBoardDetail: (event: MouseEvent<HTMLDivElement>) => void;
   onChangeSearch: (event: ChangeEvent<HTMLInputElement>) => void;
   refetch: (
