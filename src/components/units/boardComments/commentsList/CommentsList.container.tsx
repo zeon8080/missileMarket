@@ -5,7 +5,7 @@ import {
   IQuery,
   IQueryFetchBoardCommentsArgs,
 } from "../../../../commons/types/generated/types";
-import { FETCH_COMMENT } from "./CommentList.queries";
+import { FETCH_COMMENT } from "./CommentsList.queries";
 import CommentsListUI from "./CommentsList.presenter";
 
 export default function CommentsList() {

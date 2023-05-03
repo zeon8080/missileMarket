@@ -2,9 +2,9 @@ import { ChangeEvent, useState } from "react";
 import { useMutation } from "@apollo/client";
 import type { MouseEvent } from "react";
 import { useRouter } from "next/router";
-import * as S from "./CommentList.styles";
+import * as S from "./CommentsList.styles";
 import { Modal } from "antd";
-import { DELETE_COMMENT, FETCH_COMMENT } from "./CommentList.queries";
+import { DELETE_COMMENT, FETCH_COMMENT } from "./CommentsList.queries";
 import CommentsWrite from "../commentsWrite/CommentsWrite.container";
 
 export default function CommentsListUIItem(props: any) {

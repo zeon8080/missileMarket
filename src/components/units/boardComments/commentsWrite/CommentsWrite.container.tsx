@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
-import { ChangeEvent, useState, SetStateAction } from "react";
+import { ChangeEvent, useState } from "react";
 import { CREATE_COMMENT, UPDATE_COMMENT } from "./CommentsWrite.queries";
 import type { ICommentsWrite } from "./CommentsWrite.type";
 import {
@@ -11,7 +11,7 @@ import {
 } from "../../../../commons/types/generated/types";
 import CommentsWriteUI from "./CommentsWrite.presenter";
 import { Modal } from "antd";
-import { FETCH_COMMENT } from "../commentsList/CommentList.queries";
+import { FETCH_COMMENT } from "../commentsList/CommentsList.queries";
 
 export default function CommentsWrite(props: ICommentsWrite): JSX.Element {
   const router = useRouter();
