@@ -151,6 +151,16 @@ export const SubmitBtn = styled.button<IProps>`
   background: ${(props) => (props.isActive ? "#006fff" : "")};
 `;
 
+export const EditBtn = styled.button`
+  border: none;
+  width: 140px;
+  height: 50px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  background: #006fff;
+`;
+
 export const Errors = styled.div`
   font-size: 10px;
   color: tomato;

@@ -79,12 +79,20 @@ export default function BoardWriteUI(props: IBoardWriteUI) {
         </S.YoutubeBox>
         <S.DivideLine></S.DivideLine>
         <S.BtnBox>
-          <S.SubmitBtn
-            isActive={props.isActive}
-            onClick={props.isEdit ? props.onClickEdit : props.onClickJoin}
-          >
-            {props.isEdit ? "수정하기" : "등록하기"}
-          </S.SubmitBtn>
+          {props.isEdit ? (
+            <S.EditBtn
+              onClick={props.isEdit ? props.onClickEdit : props.onClickSubmit}
+            >
+              수정하기
+            </S.EditBtn>
+          ) : (
+            <S.SubmitBtn
+              isActive={props.isActive}
+              onClick={props.isEdit ? props.onClickEdit : props.onClickSubmit}
+            >
+              등록하기
+            </S.SubmitBtn>
+          )}
         </S.BtnBox>
       </S.Wrapper>
     </S.Container>

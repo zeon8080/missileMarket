@@ -12,7 +12,7 @@ export interface IBoardWriteUI {
   changeTitle: (event: ChangeEvent<HTMLInputElement>) => void;
   changeContents: (event: ChangeEvent<HTMLTextAreaElement>) => void;
   onChangeYoutubeUrl: (event: ChangeEvent<HTMLInputElement>) => void;
-  onClickJoin: () => void;
+  onClickSubmit: () => void;
   onClickEdit: () => void;
   onChangeFileUrls: (fileUrls: string, index: number) => void;
   writerErr: string;

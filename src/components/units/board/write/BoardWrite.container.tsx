@@ -97,7 +97,7 @@ export default function BoardWrite(props: IBoardWrite): JSX.Element {
     if (images !== undefined && images !== null) setFileUrls([...images]);
   }, [props.data]);
 
-  async function onClickJoin() {
+  async function onClickSubmit() {
     if (!writer) {
       setWriteErr("작성자는 필수 항목입니다.");
     }
@@ -146,7 +146,15 @@ export default function BoardWrite(props: IBoardWrite): JSX.Element {
     const defaultFiles = JSON.stringify(props.data?.fetchBoard.images);
     const isChangedFiles = currentFiles !== defaultFiles;
 
+    if (password === "") {
+      Modal.error({ content: "비밀번호를 입력해주세요." });
+      return;
+    } else {
+      setIsActive(true);
+    }
+
     const updateBoardInput: IUpdateBoardInput = {};
+
     if (title !== "") updateBoardInput.title = title;
     if (contents !== "") updateBoardInput.contents = contents;
     if (youtubeUrl !== "") updateBoardInput.youtubeUrl = youtubeUrl;
@@ -170,15 +178,10 @@ export default function BoardWrite(props: IBoardWrite): JSX.Element {
         alert("요청에 문제가 있습니다.");
         return;
       }
-
       router.push(`/boards/${result.data?.updateBoard._id}`);
     } catch (error) {
-      if (error instanceof Error) console.log(error.message);
-    }
-    if (password !== "") {
-      Modal.success({
-        content: "수정되었습니다.",
-      });
+      if (error instanceof Error)
+        Modal.error({ content: "비밀번호가 일치하지않습니다." });
     }
   };
 
@@ -190,7 +193,7 @@ export default function BoardWrite(props: IBoardWrite): JSX.Element {
       changeContents={onChangeContents}
       onChangeYoutubeUrl={onChangeYoutubeUrl}
       onChangeFileUrls={onChangeFileUrls}
-      onClickJoin={onClickJoin}
+      onClickSubmit={onClickSubmit}
       onClickEdit={onClickEdit}
       writerErr={writerErr}
       passwordErr={passwordErr}
