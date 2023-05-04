@@ -61,8 +61,7 @@ export default function ApolloSetting(props: IApolloSettingProps): JSX.Element {
 
   const uploadLink = createUploadLink({
     // uri: "https://backend11.codebootcamp.co.kr/graphql05",
-    uri: "http://backend-practice.codebootcamp.co.kr/graphql",
-
+    uri: "https://backend-practice.codebootcamp.co.kr/graphql",
     headers: { Authorization: `Bearer ${accessToken}` },
     credentials: "include",
   });
@@ -74,8 +73,8 @@ export default function ApolloSetting(props: IApolloSettingProps): JSX.Element {
 
   // prettier-ignore
   return (
-      <ApolloProvider client={client}>
-        {props.children}
-      </ApolloProvider>
-    )
+    <ApolloProvider client={client}>
+      {props.children}
+    </ApolloProvider>
+  )
 }

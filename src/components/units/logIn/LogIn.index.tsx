@@ -13,13 +13,13 @@ export default function LoginForm() {
     resolver: yupResolver(schema),
     mode: "onChange",
   });
-  const onClickJoin = (): void => {
+  const onClickMoveJoin = (): void => {
     void router.push("/join");
   };
   return (
-    <S.Container>
-      <S.Wrapper>
-        <form onSubmit={handleSubmit(onClickLogin)}>
+    <form onSubmit={handleSubmit(onClickLogin)}>
+      <S.Container>
+        <S.Wrapper>
           <S.Title>로그인</S.Title>
           <S.LoginBox>
             <input type="text" placeholder="이메일" {...register("email")} />
@@ -37,11 +37,13 @@ export default function LoginForm() {
             <button>로그인</button>
             <div>
               <span>아직 회원이 아니신가요?</span>
-              <button type="button">회원가입</button>
+              <button type="button" onClick={onClickMoveJoin}>
+                회원가입
+              </button>
             </div>
           </S.ButtonBox>
-        </form>
-      </S.Wrapper>
-    </S.Container>
+        </S.Wrapper>
+      </S.Container>
+    </form>
   );
 }
