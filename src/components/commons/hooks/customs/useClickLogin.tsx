@@ -2,15 +2,15 @@ import { useRouter } from "next/router";
 import { useRecoilState } from "recoil";
 import { accessTokenState } from "../../../../commons/stores";
 import { useMutationLogin } from "../mutation/useMutationLogin";
-import { ILogInFormData } from "../../../units/login/LogIn.type";
 import { Modal } from "antd";
+import { ILoginFormData } from "../../../units/login/Login.type";
 
 export const useClickLogin = () => {
   const router = useRouter();
   const [user] = useMutationLogin();
   const [, setAccessToken] = useRecoilState(accessTokenState);
 
-  const onClickLogin = async (data: ILogInFormData): Promise<void> => {
+  const onClickLogin = async (data: ILoginFormData): Promise<void> => {
     try {
       if (data.email && data.password) {
         const result = await user({

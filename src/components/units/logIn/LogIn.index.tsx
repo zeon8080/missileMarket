@@ -2,14 +2,14 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useClickLogin } from "../../commons/hooks/customs/useClickLogin";
-import { ILogInFormData } from "./LogIn.type";
+import { ILoginFormData } from "./Login.type";
 import * as S from "./Login.styles";
 import { schema } from "./Login.validation";
 
 export default function LoginForm() {
   const { onClickLogin } = useClickLogin();
   const router = useRouter();
-  const { register, handleSubmit, formState } = useForm<ILogInFormData>({
+  const { register, handleSubmit, formState } = useForm<ILoginFormData>({
     resolver: yupResolver(schema),
     mode: "onChange",
   });
