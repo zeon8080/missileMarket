@@ -27,10 +27,11 @@ export const useClickLogin = () => {
           return;
         }
         setAccessToken(accessToken);
-        void router.push("/boards");
+        void router.push("/items");
       }
     } catch (error) {
-      if (error instanceof Error) alert(error.message);
+      if (error instanceof Error)
+        Modal.error({ content: "로그인에 실패했습니다." });
     }
   };
   return { onClickLogin };

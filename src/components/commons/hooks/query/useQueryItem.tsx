@@ -32,7 +32,7 @@ export const useQueryItem = () => {
     FETCH_ITEM,
     {
       variables: {
-        useditemId: String(router.query.useditemId),
+        useditemId: String(router.query.itemId),
       },
     }
   );

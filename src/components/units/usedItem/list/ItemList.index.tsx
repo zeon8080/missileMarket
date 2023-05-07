@@ -2,6 +2,7 @@ import { ChangeEvent, MouseEvent, useState } from "react";
 import {
   IQuery,
   IQueryFetchUseditemsArgs,
+  IUseditem,
 } from "../../../../commons/types/generated/types";
 import { useRouter } from "next/router";
 import { useQuery } from "@apollo/client";
@@ -39,9 +40,19 @@ export default function ItemList(): JSX.Element {
     });
   };
 
-  const onClickMoveDetail = (el) => (event: MouseEvent<HTMLDivElement>) => {
-    // onClickToday(el);
-    void router.push(`/Items/${event?.currentTarget.id}`);
+  const onClickMoveDetail =
+    (el: IUseditem) => (event: MouseEvent<HTMLDivElement>) => {
+      onClickToday(el);
+      void router.push(`/items/${event?.currentTarget.id}`);
+    };
+  const onClickToday = (today: IUseditem) => {
+    const todays: IUseditem[] = JSON.parse(
+      sessionStorage.getItem("todays") ?? "[]"
+    );
+
+    todays.unshift(today);
+
+    sessionStorage.setItem("todays", JSON.stringify(todays));
   };
 
   const getDebounce = _.debounce((value) => {

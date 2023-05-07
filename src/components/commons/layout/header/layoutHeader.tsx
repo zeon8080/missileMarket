@@ -5,7 +5,7 @@ export default function LayoutHeader(): JSX.Element {
   const router = useRouter();
 
   const onClickMoveBoards = () => {
-    void router.push("/boards");
+    void router.push("http://localhost:3000");
   };
 
   return (

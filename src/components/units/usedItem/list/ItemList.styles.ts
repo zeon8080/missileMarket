@@ -16,6 +16,7 @@ export const Scroll = styled(InfiniteScroll)`
   gap: 20px;
   width: 1024px;
   margin: 40px 0;
+  cursor: pointer;
 `;
 
 export const SearchBox = styled.div`
