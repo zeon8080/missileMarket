@@ -136,6 +136,7 @@ export const LeftBox = styled.div`
   display: flex;
   flex-direction: column;
   width: 60%;
+  height: 100%;
   border-right: 2px solid #888888;
   margin-right: 20px;
 
@@ -151,8 +152,9 @@ export const LeftBox = styled.div`
   }
 
   > :nth-child(4) {
-    height: 200px;
+    height: 100%;
     margin: 20px 0;
+    margin-right: 20px;
   }
 `;
 
