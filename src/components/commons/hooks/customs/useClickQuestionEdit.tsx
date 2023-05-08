@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useMutationQuestionEdit } from "../mutation/useMutationQuestionEdit";
 import { FETCH_QUESTIONS } from "../query/useQueryQuestion";
 import { Modal } from "antd";
@@ -9,7 +9,7 @@ export const useClickQuestionEdit = () => {
   const [updateQuestion] = useMutationQuestionEdit();
   const [myIndex, setMyIndex] = useState(-1);
 
-  const onClickQuestionEdit = (event: any) => {
+  const onClickQuestionEdit = (event: React.MouseEvent<HTMLButtonElement>) => {
     setMyIndex(Number(event.currentTarget.id));
   };
 

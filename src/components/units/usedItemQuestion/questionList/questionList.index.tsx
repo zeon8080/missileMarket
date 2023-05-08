@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import {
+  ICreateUseditemQuestionInput,
   IQuery,
   IQueryFetchUseditemQuestionsArgs,
 } from "../../../../commons/types/generated/types";
@@ -21,7 +22,7 @@ export default function QuestionList() {
       useditemId: String(router.query.itemId),
     },
   });
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<ICreateUseditemQuestionInput>();
   const { onClickQuestionDelete } = useClickQuestion();
   const { myIndex, onClickQuestionEdit, onClickQuestionEditSubmit } =
     useClickQuestionEdit();
