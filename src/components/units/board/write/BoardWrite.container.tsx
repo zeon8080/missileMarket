@@ -61,7 +61,6 @@ export default function BoardWrite(props: IBoardWrite): JSX.Element {
     }
   }
 
-  console.log(password);
   function onChangeTitle(event: ChangeEvent<HTMLInputElement>) {
     setTitle(event.target.value);
     if (writer && title && password && contents) {

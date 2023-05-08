@@ -84,11 +84,11 @@ export const Contents = styled.div`
   align-items: flex-end;
   margin: 0 8px;
 
-  > :nth-child(1) {
+  > :nth-of-type(1) {
     font-weight: bold;
   }
 
-  > :nth-child(2) {
+  > :nth-of-type(2) {
     font-size: 14px;
     color: #888888;
   }

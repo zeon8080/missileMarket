@@ -10,7 +10,7 @@ export const useClickDeleteItem = () => {
     try {
       await deleteItem({
         variables: {
-          useditemId: String(router.query.useditemId),
+          useditemId: String(router.query.itemId),
         },
       });
       Modal.success({ content: "삭제되었습니다." });

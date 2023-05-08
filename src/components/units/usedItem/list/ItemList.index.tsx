@@ -19,7 +19,7 @@ export default function ItemList(): JSX.Element {
   const [, setKeyword] = useState("");
 
   const onLoadMore = (): void => {
-    if (data === undefined) return;
+    if (!data) return;
     void fetchMore({
       variables: {
         page: Math.ceil((data?.fetchUseditems.length ?? 10) / 10 + 1),
@@ -38,6 +38,10 @@ export default function ItemList(): JSX.Element {
         };
       },
     });
+  };
+
+  const onClickMoveWrite = () => {
+    void router.push("/items/new");
   };
 
   const onClickMoveDetail =
@@ -68,7 +72,7 @@ export default function ItemList(): JSX.Element {
     <S.Container>
       <S.SearchBox>
         <input type="text" placeholder="검색" onChange={onChangeSearch} />
-        <button>상품 등록</button>
+        <button onClick={onClickMoveWrite}>상품 등록</button>
       </S.SearchBox>
       <S.Scroll pageStart={0} loadMore={onLoadMore} hasMore={true}>
         {data?.fetchUseditems.map((el) => (
