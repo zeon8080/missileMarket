@@ -44,7 +44,7 @@ export const TopBox = styled.div`
   align-items: flex-start;
   width: calc(100%-400px);
 
-  > :nth-child(1) {
+  > :nth-of-type(1) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -55,13 +55,13 @@ export const TopBox = styled.div`
     margin-bottom: 30px;
   }
 
-  > :nth-child(2) {
+  > :nth-of-type(2) {
     font-weight: bold;
     font-size: 26px;
     margin-bottom: 6px;
   }
 
-  > :nth-child(4) {
+  > :nth-of-type(4) {
     height: 200px;
     margin: 20px 0;
   }
@@ -92,7 +92,7 @@ export const BtnBox = styled.div`
   margin-top: 20px;
   width: 100%;
 
-  > :nth-child(1) {
+  > :nth-of-type(1) {
     border: none;
     width: 140px;
     height: 50px;
@@ -103,7 +103,7 @@ export const BtnBox = styled.div`
     margin-left: 10px;
   }
 
-  > :nth-child(2) {
+  > :nth-of-type(2) {
     border: none;
     width: 140px;
     height: 50px;
@@ -114,7 +114,7 @@ export const BtnBox = styled.div`
     margin-left: 10px;
   }
 
-  > :nth-child(3) {
+  > :nth-of-type(3) {
     border: none;
     width: 140px;
     height: 50px;
@@ -137,21 +137,19 @@ export const LeftBox = styled.div`
   flex-direction: column;
   width: 60%;
   height: 100%;
-  border-right: 2px solid #888888;
-  margin-right: 20px;
 
-  > :nth-child(1) {
+  > :nth-of-type(1) {
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 6px;
   }
 
-  > :nth-child(2) {
+  > :nth-of-type(2) {
     border: 1px solid #888888;
     width: 96%;
   }
 
-  > :nth-child(4) {
+  > :nth-of-type(4) {
     height: 100%;
     margin: 20px 0;
     margin-right: 20px;
@@ -175,18 +173,19 @@ export const RightBox = styled.div`
   display: flex;
   flex-direction: column;
   width: 30%;
+  padding-left: 20px;
 
-  > :nth-child(1) {
+  > :nth-of-type(1) {
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 6px;
   }
 
-  > :nth-child(3) {
+  > :nth-of-type(3) {
     margin: 20px 0;
   }
 
-  > :nth-child(5) {
+  > :nth-of-type(5) {
     font-weight: bold;
     font-size: 24px;
     margin: 20px 0 6px 0;
