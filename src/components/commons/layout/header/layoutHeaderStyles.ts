@@ -23,6 +23,9 @@ export const Wrapper = styled.div`
     font-size: 14px;
     margin-left: 20px;
     cursor: pointer;
+    :hover {
+      color: #006fff;
+    }
   }
 `;
 
