@@ -66,7 +66,7 @@ export default function ItemDetail(): JSX.Element {
       </S.TopWrapper>
       <S.BodyWrapper>
         <S.LeftBox>
-          <div>상품정보</div>
+          <div>상품 정보</div>
           <div></div>
           <S.ImgBox>
             {data?.fetchUseditem.images?.[1] ? (
@@ -95,7 +95,15 @@ export default function ItemDetail(): JSX.Element {
               />
             )}
           </div>
-          <div>지역</div>
+          <S.LocationBox>
+            {data?.fetchUseditem.useditemAddress?.address && (
+              <>
+                <div>위치</div>
+                <div></div>
+                <div>{data?.fetchUseditem.useditemAddress?.address}</div>
+              </>
+            )}
+          </S.LocationBox>
         </S.LeftBox>
         <S.RightBox>
           <div>상점 정보</div>

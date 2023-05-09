@@ -169,6 +169,20 @@ export const ImgBox = styled.div`
   }
 `;
 
+export const LocationBox = styled.div`
+  > :nth-of-type(1) {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  > :nth-of-type(2) {
+    border: 1px solid #888888;
+    width: 96%;
+    margin-bottom: 20px;
+  }
+`;
+
 export const RightBox = styled.div`
   display: flex;
   flex-direction: column;
