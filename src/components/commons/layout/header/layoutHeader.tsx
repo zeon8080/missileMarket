@@ -21,6 +21,11 @@ export default function LayoutHeader(): JSX.Element {
     void router.push("/join");
   };
 
+  const onClickLogout = async () => {
+    await logoutUser();
+    window.location.reload();
+  };
+
   return (
     <S.Container>
       {data?.fetchUserLoggedIn ? (
@@ -29,6 +34,7 @@ export default function LayoutHeader(): JSX.Element {
           <div>
             <span>{data?.fetchUserLoggedIn.name} 님</span>
             <span>{data?.fetchUserLoggedIn.userPoint?.amount} P</span>
+            <span onClick={onClickLogout}>로그아웃</span>
             <span>장바구니</span>
           </div>
         </S.Wrapper>
