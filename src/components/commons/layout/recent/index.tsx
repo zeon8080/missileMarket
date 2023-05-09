@@ -41,7 +41,7 @@ const Title = styled.div`
 `;
 
 export default function LayoutRecent() {
-  const router = useRouter();
+  // const router = useRouter();
   const [todayList, setTodayList] = useState<any>();
 
   useEffect(() => {

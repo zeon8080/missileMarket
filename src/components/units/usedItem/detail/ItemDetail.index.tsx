@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useClickDeleteItem } from "../../../commons/hooks/customs/useClickDelete";
 import { useClickBuy } from "../../../commons/hooks/customs/useClickBuy";
-import { useClickBasket } from "../../../commons/hooks/customs/useClickBasket";
 import { useQueryItem } from "../../../commons/hooks/query/useQueryItem";
 import * as S from "./ItemDetail.styles";
 import DOMPurify from "dompurify";
@@ -13,24 +12,11 @@ export default function ItemDetail(): JSX.Element {
   const router = useRouter();
   const { onClickDeleteItem } = useClickDeleteItem();
   const { onClickBuy } = useClickBuy();
-  const { onClickBasket } = useClickBasket();
   const { data } = useQueryItem();
-  const [, setBasketState] = useState();
 
   const onClickMoveEdit = () => {
     void router.push(`/items/${router.query.itemId}/edit`);
   };
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const basketFunc = () => {
-        let basketRecent = JSON.parse(localStorage.getItem("todays") || "null");
-        setBasketState(basketRecent);
-      };
-
-      basketFunc();
-    }
-  }, []);
 
   return (
     <S.Container>
@@ -59,7 +45,6 @@ export default function ItemDetail(): JSX.Element {
           <S.DivideLineGray></S.DivideLineGray>
           <S.BtnBox>
             <button>찜</button>
-            <button>장바구니</button>
             <button onClick={onClickBuy}>바로 구매</button>
           </S.BtnBox>
         </S.TopBox>

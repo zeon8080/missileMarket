@@ -35,7 +35,6 @@ export default function LayoutHeader(): JSX.Element {
             <span>{data?.fetchUserLoggedIn.name} 님</span>
             <span>{data?.fetchUserLoggedIn.userPoint?.amount} P</span>
             <span onClick={onClickLogout}>로그아웃</span>
-            <span>장바구니</span>
           </div>
         </S.Wrapper>
       ) : (
@@ -44,7 +43,6 @@ export default function LayoutHeader(): JSX.Element {
           <div>
             <span onClick={onClickMoveLogin}>로그인</span>
             <span onClick={onClickMoveJoin}>회원가입</span>
-            <span>장바구니</span>
           </div>
         </S.Wrapper>
       )}
