@@ -17,7 +17,7 @@ const LayoutBody = styled.div`
 
 export default function Layout(props: ILayoutPros): JSX.Element {
   const router = useRouter();
-  const HIDDEN_RECENT = ["/join", "/login"];
+  const HIDDEN_RECENT = ["/join", "/login", "/point"];
   const isHiddenRecent = HIDDEN_RECENT.includes(router.asPath);
   return (
     <Container>

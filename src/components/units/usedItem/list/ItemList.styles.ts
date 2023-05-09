@@ -25,7 +25,7 @@ export const SearchBox = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-bottom: 40px;
+  margin: 40px 0;
 
   > input {
     width: 600px;
