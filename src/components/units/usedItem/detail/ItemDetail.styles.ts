@@ -87,7 +87,7 @@ export const EditBtnBox = styled.div`
 export const BtnBox = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   margin-top: 20px;
   width: 100%;
