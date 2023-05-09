@@ -42,7 +42,7 @@ export const TopBox = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  width: calc(100%-400px);
+  width: 490px;
 
   > :nth-of-type(1) {
     display: flex;

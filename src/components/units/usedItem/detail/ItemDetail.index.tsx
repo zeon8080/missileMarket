@@ -30,7 +30,6 @@ export default function ItemDetail(): JSX.Element {
             <img src="/empty.png" />
           )}
         </S.ImageBox>
-
         <S.TopBox>
           <div>
             <span>{data?.fetchUseditem?.name}</span>
