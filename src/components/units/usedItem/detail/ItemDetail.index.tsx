@@ -60,7 +60,7 @@ export default function ItemDetail(): JSX.Element {
           <S.BtnBox>
             <button>찜</button>
             <button>장바구니</button>
-            <button>바로 구매</button>
+            <button onClick={onClickBuy}>바로 구매</button>
           </S.BtnBox>
         </S.TopBox>
       </S.TopWrapper>
