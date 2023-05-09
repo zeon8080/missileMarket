@@ -18,7 +18,7 @@ export default function ItemDetail(): JSX.Element {
   const [, setBasketState] = useState();
 
   const onClickMoveEdit = () => {
-    void router.push(`/usedItems/${router.query.itemId}/edit`);
+    void router.push(`/items/${router.query.itemId}/edit`);
   };
 
   useEffect(() => {
@@ -49,7 +49,7 @@ export default function ItemDetail(): JSX.Element {
           <div>
             <span>{data?.fetchUseditem?.name}</span>
             <S.EditBtnBox>
-              <button>수정</button>
+              <button onClick={onClickMoveEdit}>수정</button>
               <button onClick={onClickDeleteItem}>삭제</button>
             </S.EditBtnBox>
           </div>

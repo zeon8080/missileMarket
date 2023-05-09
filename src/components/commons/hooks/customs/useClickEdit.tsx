@@ -11,7 +11,7 @@ export const useClickEdit = () => {
     try {
       const result = await updateItem({
         variables: {
-          useditemId: String(router.query.useditemId),
+          useditemId: String(router.query.itemId),
           updateUseditemInput: {
             name: data.name,
             remarks: data.remarks,

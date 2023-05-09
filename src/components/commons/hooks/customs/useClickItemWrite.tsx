@@ -73,7 +73,6 @@ export const useClickItemWrite = () => {
             },
           },
         });
-        console.log("1224243", result);
         Modal.success({ content: "상품이 등록되었습니다!" });
         void router.push(`/items/${result.data?.createUseditem._id}`);
       }

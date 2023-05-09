@@ -96,7 +96,6 @@ export default function ItemWrite(props: IItemWrite): JSX.Element {
             <ReactQuill
               style={{ height: "200px", width: "600px", marginBottom: "40px" }}
               onChange={onChangeContents}
-              // defaultValue={data?.fetchUseditem.contents ?? ""}
               value={contents ? contents : data?.fetchUseditem.contents ?? ""}
             ></ReactQuill>
           </S.QuillBox>
