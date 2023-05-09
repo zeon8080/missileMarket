@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useMutationJoin } from "../mutation/useMutationJoin";
 import { IJoinFormData } from "../../../units/join/Join.type";
+import { Modal } from "antd";
 
 export const useClickJoin = () => {
   const [createUser] = useMutationJoin();
@@ -18,11 +19,11 @@ export const useClickJoin = () => {
             },
           },
         });
-        alert("회원가입이 완료되었습니다.");
+        Modal.success({ content: "회원가입이 완료되었습니다." });
         void router.push("/login");
       }
     } catch (error) {
-      if (error instanceof Error) alert(error.message);
+      if (error instanceof Error) Modal.error({ content: error.message });
     }
   };
   return { onClickJoin };

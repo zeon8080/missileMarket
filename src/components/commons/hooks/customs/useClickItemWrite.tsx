@@ -77,8 +77,7 @@ export const useClickItemWrite = () => {
         void router.push(`/items/${result.data?.createUseditem._id}`);
       }
     } catch (error) {
-      if (error instanceof Error)
-        Modal.error({ content: "상품 등록에 실패했습니다." });
+      if (error instanceof Error) Modal.error({ content: error.message });
     }
   };
   return {

@@ -23,8 +23,7 @@ export const useClickEdit = () => {
       Modal.success({ content: "수정 되었습니다!" });
       void router.push(`/items/${result.data?.updateUseditem._id}`);
     } catch (error) {
-      if (error instanceof Error)
-        Modal.error({ content: "상품 수정에 실패했습니다." });
+      if (error instanceof Error) Modal.error({ content: error.message });
     }
   };
   return { onClickEdit };

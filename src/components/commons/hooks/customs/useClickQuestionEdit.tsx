@@ -32,7 +32,7 @@ export const useClickQuestionEdit = () => {
       setMyIndex(-1);
       Modal.success({ content: "수정되었습니다." });
     } catch (error) {
-      if (error instanceof Error) alert(error.message);
+      if (error instanceof Error) Modal.error({ content: error.message });
     }
   };
   return { myIndex, onClickQuestionEdit, onClickQuestionEditSubmit };

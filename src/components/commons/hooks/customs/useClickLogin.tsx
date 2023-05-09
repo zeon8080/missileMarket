@@ -30,8 +30,7 @@ export const useClickLogin = () => {
         void router.push("/items");
       }
     } catch (error) {
-      if (error instanceof Error)
-        Modal.error({ content: "로그인에 실패했습니다." });
+      if (error instanceof Error) Modal.error({ content: error.message });
     }
   };
   return { onClickLogin };

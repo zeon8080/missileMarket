@@ -35,8 +35,7 @@ export const useClickQuestion = () => {
         setValue("contents", "");
         Modal.success({ content: "댓글이 등록되었습니다." });
       } catch (error) {
-        if (error instanceof Error)
-          Modal.error({ content: "댓글 등록에 실패했습니다." });
+        if (error instanceof Error) Modal.error({ content: error.message });
       }
     };
 

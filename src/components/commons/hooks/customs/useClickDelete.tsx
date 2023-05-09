@@ -16,8 +16,7 @@ export const useClickDeleteItem = () => {
       Modal.success({ content: "삭제되었습니다." });
       router.push("http://localhost:3000");
     } catch (error) {
-      if (error instanceof Error)
-        Modal.error({ content: "상품 삭제 권한이 없습니다." });
+      if (error instanceof Error) Modal.error({ content: error.message });
     }
   };
   return { onClickDeleteItem };
