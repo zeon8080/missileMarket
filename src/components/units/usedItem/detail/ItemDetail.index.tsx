@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useClickDeleteItem } from "../../../commons/hooks/customs/useClickDelete";
 import { useClickBuy } from "../../../commons/hooks/customs/useClickBuy";
@@ -7,11 +6,13 @@ import * as S from "./ItemDetail.styles";
 import DOMPurify from "dompurify";
 import QuestionWrite from "../../usedItemQuestion/questionWrite/questionWrite.index";
 import QuestionList from "../../usedItemQuestion/questionList/questionList.index";
+import { useClickPick } from "../../../commons/hooks/customs/useClickPick";
 
 export default function ItemDetail(): JSX.Element {
   const router = useRouter();
   const { onClickDeleteItem } = useClickDeleteItem();
   const { onClickBuy } = useClickBuy();
+  const { onClickPick } = useClickPick();
   const { data } = useQueryItem();
 
   const onClickMoveEdit = () => {
@@ -43,7 +44,9 @@ export default function ItemDetail(): JSX.Element {
           <div>{data?.fetchUseditem?.remarks}</div>
           <S.DivideLineGray></S.DivideLineGray>
           <S.BtnBox>
-            <button>찜</button>
+            <button onClick={onClickPick}>
+              찜 {data?.fetchUseditem.pickedCount}
+            </button>
             <button onClick={onClickBuy}>바로 구매</button>
           </S.BtnBox>
         </S.TopBox>

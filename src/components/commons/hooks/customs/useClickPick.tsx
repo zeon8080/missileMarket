@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useMutationPickItem } from "../mutation/useMutationPick";
+import { FETCH_ITEM } from "../query/useQueryItem";
 
 export const useClickPick = () => {
   const router = useRouter();
@@ -8,8 +9,14 @@ export const useClickPick = () => {
   const onClickPick = () => {
     toggleUseditemPick({
       variables: {
-        useditemId: String(router.query.useditemId),
+        useditemId: String(router.query.itemId),
       },
+      refetchQueries: [
+        {
+          query: FETCH_ITEM,
+          variables: { useditemId: router.query.itemId },
+        },
+      ],
     });
   };
 
