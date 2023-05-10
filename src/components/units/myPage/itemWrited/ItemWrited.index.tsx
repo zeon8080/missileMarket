@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEvent, useState } from "react";
+import { MouseEvent } from "react";
 import {
   IQuery,
   IQueryFetchUseditemsISoldArgs,
@@ -7,12 +7,10 @@ import { FETCH_USER_ITEMS } from "../../../commons/hooks/query/useQueryUserItem"
 import * as S from "./ItemWrited.stlyes";
 import { useRouter } from "next/router";
 import { useQuery } from "@apollo/client";
-import _ from "lodash";
 
 export default function SoldItemListPage() {
   const router = useRouter();
-  const [, setKeyword] = useState("");
-  const { data, refetch, fetchMore } = useQuery<
+  const { data, fetchMore } = useQuery<
     Pick<IQuery, "fetchUseditemsISold">,
     IQueryFetchUseditemsISoldArgs
   >(FETCH_USER_ITEMS);
@@ -31,8 +29,8 @@ export default function SoldItemListPage() {
         }
         return {
           fetchUseditemsISold: [
-            ...prev.fetchUseditemsISold,
-            ...fetchMoreResult.fetchUseditemsISold,
+            ...(prev.fetchUseditemsISold ?? []),
+            ...(fetchMoreResult.fetchUseditemsISold ?? []),
           ],
         };
       },
@@ -43,19 +41,8 @@ export default function SoldItemListPage() {
     void router.push(`/items/${event?.currentTarget.id}`);
   };
 
-  const getDebounce = _.debounce((value) => {
-    void refetch({ search: value, page: 1 });
-    setKeyword(value);
-  }, 700);
-  const onChangeSearch = (event: ChangeEvent<HTMLInputElement>): void => {
-    getDebounce(event.currentTarget.value);
-  };
-
   return (
     <S.Container>
-      <S.SearchBox>
-        <input type="text" placeholder="검색" onChange={onChangeSearch} />
-      </S.SearchBox>
       <S.Scroll pageStart={0} loadMore={onLoadMore} hasMore={true}>
         {data?.fetchUseditemsISold.map((el) => (
           <S.ItemBox key={el._id} id={el._id} onClick={onClickMoveDetail}>

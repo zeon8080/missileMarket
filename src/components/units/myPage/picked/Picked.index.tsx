@@ -11,8 +11,7 @@ import { FETCH_PICKED } from "../../../commons/hooks/query/useQueryPicked";
 
 export default function PickedPage() {
   const router = useRouter();
-  const [, setKeyword] = useState("");
-  const { data, refetch, fetchMore } = useQuery<
+  const { data, fetchMore } = useQuery<
     Pick<IQuery, "fetchUseditemsIPicked">,
     IQueryFetchUseditemsIPickedArgs
   >(FETCH_PICKED, {
@@ -33,8 +32,8 @@ export default function PickedPage() {
         }
         return {
           fetchUseditemsIPicked: [
-            ...prev.fetchUseditemsIPicked,
-            ...fetchMoreResult.fetchUseditemsIPicked,
+            ...(prev.fetchUseditemsIPicked ?? []),
+            ...(fetchMoreResult.fetchUseditemsIPicked ?? []),
           ],
         };
       },
@@ -45,19 +44,8 @@ export default function PickedPage() {
     void router.push(`/items/${event?.currentTarget.id}`);
   };
 
-  const getDebounce = _.debounce((value) => {
-    void refetch({ search: value, page: 1 });
-    setKeyword(value);
-  }, 700);
-  const onChangeSearch = (event: ChangeEvent<HTMLInputElement>): void => {
-    getDebounce(event.currentTarget.value);
-  };
-
   return (
     <S.Container>
-      <S.SearchBox>
-        <input type="text" placeholder="검색" onChange={onChangeSearch} />
-      </S.SearchBox>
       <S.Scroll pageStart={0} loadMore={onLoadMore} hasMore={true}>
         {data?.fetchUseditemsIPicked.map((el) => (
           <S.ItemBox key={el._id} id={el._id} onClick={onClickMoveDetail}>

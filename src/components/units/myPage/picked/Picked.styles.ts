@@ -17,32 +17,6 @@ export const Scroll = styled(InfiniteScroll)`
   margin: 40px 0;
 `;
 
-export const SearchBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 40px 0;
-
-  > input {
-    width: 100%;
-    height: 46px;
-    padding: 0 10px;
-  }
-
-  > button {
-    border: none;
-    width: 140px;
-    height: 50px;
-    text-align: center;
-    color: white;
-    background-color: #006fff;
-    cursor: pointer;
-    margin-left: 10px;
-  }
-`;
-
 export const ItemBox = styled.div`
   width: 180px;
   height: 260px;
