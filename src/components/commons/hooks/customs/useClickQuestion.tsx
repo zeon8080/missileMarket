@@ -56,8 +56,7 @@ export const useClickQuestion = () => {
       });
       Modal.success({ content: "삭제되었습니다." });
     } catch (error) {
-      if (error instanceof Error)
-        Modal.error({ content: "댓글 삭제에 실패했습니다." });
+      if (error instanceof Error) Modal.error({ content: error.message });
     }
   };
 
