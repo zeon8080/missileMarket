@@ -30,6 +30,10 @@ export default function LayoutHeader(): JSX.Element {
     void router.push("/myPage");
   };
 
+  const onClickMoveCharge = () => {
+    void router.push("/point");
+  };
+
   return (
     <S.Container>
       {data?.fetchUserLoggedIn ? (
@@ -39,7 +43,9 @@ export default function LayoutHeader(): JSX.Element {
             <span onClick={onClickMoveMyPage}>
               {data?.fetchUserLoggedIn.name} 님
             </span>
-            <span>{data?.fetchUserLoggedIn.userPoint?.amount} P</span>
+            <span onClick={onClickMoveCharge}>
+              {data?.fetchUserLoggedIn.userPoint?.amount} P
+            </span>
             <span onClick={onClickLogout}>로그아웃</span>
           </div>
         </S.Wrapper>
