@@ -10,9 +10,6 @@ export default function LayoutHeader(): JSX.Element {
   const [logoutUser] = useMutation<Pick<IMutation, "logoutUser">>(LOGOUT_USER);
   const { data } = useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER);
 
-  const onClickMoveBoards = () => {
-    void router.push("http://localhost:3000");
-  };
   const onClickMoveLogin = () => {
     void router.push("/login");
   };
@@ -34,11 +31,23 @@ export default function LayoutHeader(): JSX.Element {
     void router.push("/point");
   };
 
+  const onClickMoveItems = () => {
+    void router.push("http://localhost:3000");
+  };
+
+  const onClickMoveBoards = () => {
+    void router.push("/boards");
+  };
+
   return (
     <S.Container>
       {data?.fetchUserLoggedIn ? (
         <S.Wrapper>
-          <S.Logo src="/nameLogo.png" onClick={onClickMoveBoards} />
+          <S.Logo src="/nameLogo.png" onClick={onClickMoveItems} />
+          <S.Menu>
+            <p onClick={onClickMoveItems}>상품</p>
+            <p onClick={onClickMoveBoards}>자유게시판</p>
+          </S.Menu>
           <div>
             <span onClick={onClickMoveMyPage}>
               {data?.fetchUserLoggedIn.name} 님
