@@ -11,3 +11,9 @@ export const FETCH_PICKED = gql`
     }
   }
 `;
+
+export const FETCH_PICKED_COUNT = gql`
+  query {
+    fetchUseditemsCountIPicked
+  }
+`;

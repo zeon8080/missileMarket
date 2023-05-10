@@ -1,48 +1,19 @@
-import styled from "@emotion/styled";
+import { useQuery } from "@apollo/client";
+import * as S from "./recentStyles";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-
-const ImgBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-  border: 1px solid #dddddd;
-  width: 60px;
-  height: 60px;
-
-  > img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    /* cursor: pointer; */
-  }
-`;
-
-const Box = styled.div`
-  position: fixed;
-  right: 90px;
-  top: 110px;
-  width: 90px;
-  background-color: white;
-  border: 1px solid #dddddd;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Title = styled.div`
-  font-size: 12px;
-  font-weight: 500;
-  color: #888888;
-  margin: 10px 0;
-`;
+import { FETCH_PICKED_COUNT } from "../../hooks/query/useQueryPicked";
+import { IQuery } from "../../../../commons/types/generated/types";
 
 export default function LayoutRecent() {
-  // const router = useRouter();
+  const router = useRouter();
   const [todayList, setTodayList] = useState<any>();
+  const { data } =
+    useQuery<Pick<IQuery, "fetchUseditemsCountIPicked">>(FETCH_PICKED_COUNT);
+
+  const onClickMoveMyPage = () => {
+    void router.push("/myPage");
+  };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -56,10 +27,20 @@ export default function LayoutRecent() {
 
   return (
     <>
-      <Box>
-        <Title>최근본상품</Title>
+      <S.Box>
+        <S.Page onClick={onClickMoveMyPage}>마이페이지</S.Page>
+        <S.DivideLine></S.DivideLine>
+        <S.PickBox onClick={onClickMoveMyPage}>
+          <div>찜한 상품</div>
+          <S.Picked>
+            <S.Heart></S.Heart>
+            <span>{data?.fetchUseditemsCountIPicked}</span>
+          </S.Picked>
+        </S.PickBox>
+        <S.DivideLine></S.DivideLine>
+        <S.Title>최근본상품</S.Title>
         {todayList?.map((el: { images: any[] }) => (
-          <ImgBox>
+          <S.ImgBox>
             <img
               src={
                 el.images[0]
@@ -67,9 +48,9 @@ export default function LayoutRecent() {
                   : "/empty.png"
               }
             />
-          </ImgBox>
+          </S.ImgBox>
         ))}
-      </Box>
+      </S.Box>
     </>
   );
 }
