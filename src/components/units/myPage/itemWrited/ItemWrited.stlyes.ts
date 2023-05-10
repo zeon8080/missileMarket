@@ -13,8 +13,7 @@ export const Scroll = styled(InfiniteScroll)`
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  gap: 20px;
-  width: 1024px;
+  gap: 8px;
   margin: 40px 0;
 `;
 
@@ -27,7 +26,7 @@ export const SearchBox = styled.div`
   margin: 40px 0;
 
   > input {
-    width: 600px;
+    width: 100%;
     height: 46px;
     padding: 0 10px;
   }

@@ -1,70 +1,54 @@
 import { ChangeEvent, MouseEvent, useState } from "react";
 import {
   IQuery,
-  IQueryFetchUseditemsArgs,
+  IQueryFetchUseditemsISoldArgs,
   IUseditem,
 } from "../../../../commons/types/generated/types";
+import { FETCH_USER_ITEMS } from "../../../commons/hooks/query/useQueryUserItem";
+import * as S from "./ItemWrited.stlyes";
 import { useRouter } from "next/router";
 import { useQuery } from "@apollo/client";
-import { FETCH_ITEMS_LIST } from "../../../commons/hooks/query/useQueryItems";
 import _ from "lodash";
-import * as S from "./ItemList.styles";
 
-export default function ItemList(): JSX.Element {
+export default function SoldItemListPage() {
   const router = useRouter();
-  const { data, fetchMore, refetch } = useQuery<
-    Pick<IQuery, "fetchUseditems">,
-    IQueryFetchUseditemsArgs
-  >(FETCH_ITEMS_LIST);
   const [, setKeyword] = useState("");
+  const { data, refetch, fetchMore } = useQuery<
+    Pick<IQuery, "fetchUseditemsISold">,
+    IQueryFetchUseditemsISoldArgs
+  >(FETCH_USER_ITEMS);
 
   const onLoadMore = (): void => {
     if (!data) return;
     void fetchMore({
       variables: {
-        page: Math.ceil((data?.fetchUseditems.length ?? 10) / 10 + 1),
+        page: Math.ceil((data?.fetchUseditemsISold.length ?? 10) / 10 + 1),
       },
       updateQuery: (prev, { fetchMoreResult }) => {
-        if (fetchMoreResult.fetchUseditems === undefined) {
+        if (fetchMoreResult.fetchUseditemsISold === undefined) {
           return {
-            fetchUseditems: [...prev.fetchUseditems],
+            fetchUseditemsISold: [...prev.fetchUseditemsISold],
           };
         }
         return {
-          fetchUseditems: [
-            ...prev.fetchUseditems,
-            ...fetchMoreResult.fetchUseditems,
+          fetchUseditemsISold: [
+            ...prev.fetchUseditemsISold,
+            ...fetchMoreResult.fetchUseditemsISold,
           ],
         };
       },
     });
   };
 
-  const onClickMoveWrite = () => {
-    void router.push("/items/new");
-  };
-
   const onClickMoveDetail =
     (el: IUseditem) => (event: MouseEvent<HTMLDivElement>) => {
-      onClickToday(el);
       void router.push(`/items/${event?.currentTarget.id}`);
     };
-
-  const onClickToday = (today: IUseditem) => {
-    const todays: IUseditem[] = JSON.parse(
-      sessionStorage.getItem("todays") ?? "[]"
-    );
-
-    todays.unshift(today);
-
-    sessionStorage.setItem("todays", JSON.stringify(todays));
-  };
 
   const getDebounce = _.debounce((value) => {
     void refetch({ search: value, page: 1 });
     setKeyword(value);
   }, 700);
-
   const onChangeSearch = (event: ChangeEvent<HTMLInputElement>): void => {
     getDebounce(event.currentTarget.value);
   };
@@ -73,10 +57,10 @@ export default function ItemList(): JSX.Element {
     <S.Container>
       <S.SearchBox>
         <input type="text" placeholder="검색" onChange={onChangeSearch} />
-        <button onClick={onClickMoveWrite}>상품 등록</button>
+        {/* <button onClick={onClickMoveWrite}>상품 등록</button> */}
       </S.SearchBox>
       <S.Scroll pageStart={0} loadMore={onLoadMore} hasMore={true}>
-        {data?.fetchUseditems.map((el) => (
+        {data?.fetchUseditemsISold.map((el) => (
           <S.ItemBox key={el._id} id={el._id} onClick={onClickMoveDetail(el)}>
             <S.ImgBox>
               <img

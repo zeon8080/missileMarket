@@ -6,7 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   border-bottom: 1px solid #eeeeee;
-  background-color: white;
+  background-color: #ffffff;
   position: fixed;
   top: 0;
 `;

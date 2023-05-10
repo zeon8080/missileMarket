@@ -26,13 +26,19 @@ export default function LayoutHeader(): JSX.Element {
     window.location.reload();
   };
 
+  const onClickMoveMyPage = () => {
+    void router.push("/myPage");
+  };
+
   return (
     <S.Container>
       {data?.fetchUserLoggedIn ? (
         <S.Wrapper>
           <S.Logo src="/nameLogo.png" onClick={onClickMoveBoards} />
           <div>
-            <span>{data?.fetchUserLoggedIn.name} 님</span>
+            <span onClick={onClickMoveMyPage}>
+              {data?.fetchUserLoggedIn.name} 님
+            </span>
             <span>{data?.fetchUserLoggedIn.userPoint?.amount} P</span>
             <span onClick={onClickLogout}>로그아웃</span>
           </div>
