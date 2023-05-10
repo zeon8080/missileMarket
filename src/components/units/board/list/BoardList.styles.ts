@@ -58,7 +58,7 @@ export const ListBox = styled.div`
   width: 100%;
   height: 80px;
   line-height: 60px;
-  border: 1px solid black;
+  border: 1px solid #888888;
   margin-bottom: 10px;
   padding: 0 10px;
   cursor: pointer;
