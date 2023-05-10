@@ -15,13 +15,14 @@ import { Modal } from "antd";
 import DaumPostcodeEmbed from "react-daum-postcode";
 import UploadBasic from "../../../commons/uploadBasic/UploadBasic.container";
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const ReactQuill = dynamic(async () => await import("react-quill"), {
   ssr: false,
 });
 
 export default function ItemWrite(props: IItemWrite): JSX.Element {
   const [contents, setContents] = useState("");
+
   const { data } = useQueryItem();
   const {
     onClickItemWrite,
@@ -30,9 +31,10 @@ export default function ItemWrite(props: IItemWrite): JSX.Element {
     onCompleteAddress,
     onClickAddress,
     isOpen,
+    setFileUrls,
     address,
   } = useClickItemWrite();
-  const { onClickEdit } = useClickEdit();
+  const { onClickEdit } = useClickEdit(props);
   const { register, handleSubmit, formState, setValue, trigger } =
     useForm<IItemWrite>({
       resolver: yupResolver(schema),
@@ -43,6 +45,11 @@ export default function ItemWrite(props: IItemWrite): JSX.Element {
     void trigger("contents");
     setContents(value);
   };
+
+  useEffect(() => {
+    const images = props.data?.fetchUseditem.images;
+    if (images !== undefined && images !== null) setFileUrls([...images]);
+  }, [props.data]);
 
   LoginCheck();
 

@@ -1,7 +1,7 @@
 import { UseFieldArrayReturn } from "react-hook-form";
 import { IQuery } from "../../../../commons/types/generated/types";
 import { useRouter } from "next/router";
-import type { ChangeEvent } from "react";
+import { ChangeEvent, useEffect } from "react";
 import { useState } from "react";
 import { useMutationItemWrite } from "../mutation/useMutationItemWrite";
 import { useMutationUpload } from "../mutation/useMutationUpload";
@@ -40,8 +40,7 @@ export const useClickItemWrite = () => {
         onChangeFileUrls(fileUrl, Number(event?.target.id));
       }
     } catch (error) {
-      if (error instanceof Error)
-        Modal.error({ content: "업로드에 실패했습니다." });
+      if (error instanceof Error) Modal.error({ content: error.message });
     }
   };
   const onChangeFileUrls = (fileUrl: string, index: number): void => {
@@ -86,6 +85,7 @@ export const useClickItemWrite = () => {
     onChangeFile,
     onChangeFileUrls,
     fileUrls,
+    setFileUrls,
     onCompleteAddress,
     onClickAddress,
     isOpen,
