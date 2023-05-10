@@ -15,16 +15,20 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 768px;
-
   border-bottom: 1px solid #eeeeee;
 `;
 
+export const DivideLineGray = styled.div`
+  width: 480px;
+  border: 0.5px solid #eeeeee;
+  margin: 0 0 20px 0;
+`;
 export const UserBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  width: 480px;
 
   > div {
     width: 398px;

@@ -18,10 +18,7 @@ export default function CommentsListUIItem(props: any) {
   const onClickUpdate = (): void => {
     setIsEdit(true);
   };
-  const onClickDelete = async (
-    e: MouseEvent<HTMLButtonElement>
-  ): Promise<void> => {
-    // const password = prompt("비밀번호를 입력하세요.");
+  const onClickDelete = async (): Promise<void> => {
     try {
       await deleteBoardComment({
         variables: {
@@ -31,21 +28,19 @@ export default function CommentsListUIItem(props: any) {
         refetchQueries: [
           {
             query: FETCH_COMMENT,
-            variables: { boardId: router.query.number },
+            variables: { boardId: router.query.boardId },
           },
         ],
       });
       setIsOpenDeleteModal(false);
+      Modal.success({ content: "댓글이 삭제되었습니다." });
+      router.push(`/boards/${router.query.boardId}`);
     } catch (error) {
       if (error instanceof Error)
         Modal.error({ content: "비밀번호가 틀렸습니다." });
     }
-    // Modal.success({ content: "댓글이 삭제되었습니다." });
-    router.push(`/boards/${router.query.boardId}`);
   };
-  const onClickOpenDeleteModal = (
-    event: MouseEvent<HTMLButtonElement>
-  ): void => {
+  const onClickOpenDeleteModal = (): void => {
     setIsOpenDeleteModal(true);
   };
 
@@ -74,6 +69,7 @@ export default function CommentsListUIItem(props: any) {
               <div>{props.el.writer}</div>
               <span>{props.el.createdAt.slice(0, 10)}</span>
             </S.UserBox>
+            <S.DivideLineGray></S.DivideLineGray>
             <S.Contents>{props.el.contents}</S.Contents>
             <S.BtnBox>
               <button onClick={onClickUpdate}>수정</button>
