@@ -50,11 +50,6 @@ export const useClickItemWrite = () => {
     setFileUrls(newFileUrls);
   };
 
-  // useEffect(() => {
-  //   const images = props.data?.fetchBoard.images;
-  //   if (images !== undefined && images !== null) setFileUrls([...images]);
-  // }, [props.data]);
-
   const onCompleteAddress = (data: Address) => {
     setAddress(data.address);
     setIsOpen((prev) => !prev);

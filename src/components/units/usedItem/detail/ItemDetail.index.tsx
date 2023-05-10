@@ -68,7 +68,7 @@ export default function ItemDetail(): JSX.Element {
               <div></div>
             )}
           </S.ImgBox>
-          <div>
+          <S.ContentsBox>
             {typeof window !== "undefined" && (
               <div
                 dangerouslySetInnerHTML={{
@@ -78,7 +78,7 @@ export default function ItemDetail(): JSX.Element {
                 }}
               />
             )}
-          </div>
+          </S.ContentsBox>
           <S.LocationBox>
             {data?.fetchUseditem.useditemAddress?.address && (
               <>

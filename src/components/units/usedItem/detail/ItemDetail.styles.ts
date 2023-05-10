@@ -169,7 +169,14 @@ export const ImgBox = styled.div`
   }
 `;
 
+export const ContentsBox = styled.div`
+  width: 96%;
+  word-break: break-all;
+`;
+
 export const LocationBox = styled.div`
+  margin-bottom: 100px;
+
   > :nth-of-type(1) {
     font-weight: bold;
     font-size: 20px;
