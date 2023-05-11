@@ -1,4 +1,5 @@
 import { ChangeEvent, MouseEvent, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import {
   IQuery,
   IQueryFetchUseditemsArgs,
@@ -77,7 +78,7 @@ export default function ItemList(): JSX.Element {
       </S.SearchBox>
       <S.Scroll pageStart={0} loadMore={onLoadMore} hasMore={true}>
         {data?.fetchUseditems.map((el) => (
-          <S.ItemBox key={el._id} id={el._id} onClick={onClickMoveDetail(el)}>
+          <S.ItemBox key={uuidv4()} id={el._id} onClick={onClickMoveDetail(el)}>
             <S.ImgBox>
               <img
                 src={
