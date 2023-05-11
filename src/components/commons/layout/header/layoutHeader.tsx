@@ -44,7 +44,7 @@ export default function LayoutHeader(): JSX.Element {
       {data?.fetchUserLoggedIn ? (
         <S.Wrapper>
           <S.Logo src="/nameLogo.png" onClick={onClickMoveItems} />
-          <S.Menu>
+          <S.Menu style={{ marginRight: "10px" }}>
             <p onClick={onClickMoveItems}>상품</p>
             <p onClick={onClickMoveBoards}>자유게시판</p>
           </S.Menu>
@@ -60,7 +60,11 @@ export default function LayoutHeader(): JSX.Element {
         </S.Wrapper>
       ) : (
         <S.Wrapper>
-          <S.Logo src="/nameLogo.png" onClick={onClickMoveBoards} />
+          <S.Logo src="/nameLogo.png" onClick={onClickMoveItems} />
+          <S.Menu style={{ marginRight: "110px" }}>
+            <p onClick={onClickMoveItems}>상품</p>
+            <p onClick={onClickMoveBoards}>자유게시판</p>
+          </S.Menu>
           <div>
             <span onClick={onClickMoveLogin}>로그인</span>
             <span onClick={onClickMoveJoin}>회원가입</span>
