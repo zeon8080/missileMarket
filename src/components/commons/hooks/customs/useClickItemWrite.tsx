@@ -1,13 +1,15 @@
 import { UseFieldArrayReturn } from "react-hook-form";
 import { IQuery } from "../../../../commons/types/generated/types";
 import { useRouter } from "next/router";
-import { ChangeEvent, useEffect } from "react";
+import { ChangeEvent } from "react";
 import { useState } from "react";
 import { useMutationItemWrite } from "../mutation/useMutationItemWrite";
 import { useMutationUpload } from "../mutation/useMutationUpload";
 import { checkValidationFile } from "../../../../commons/libraries/validationFile";
 import { Modal } from "antd";
 import { Address } from "react-daum-postcode";
+import { useRecoilState } from "recoil";
+import { recoilAddress, recoilFileUrls } from "../../../../commons/stores";
 
 export interface IItemWrite {
   name?: string;
@@ -17,13 +19,16 @@ export interface IItemWrite {
   fileUrls?: UseFieldArrayReturn;
   isEdit?: boolean;
   data?: Pick<IQuery, "fetchUseditem">;
+  useditemAddress: {
+    address: string;
+  };
 }
 
 export const useClickItemWrite = () => {
   const router = useRouter();
-  const [fileUrls, setFileUrls] = useState(["", "", ""]);
+  const [fileUrls, setFileUrls] = useRecoilState(recoilFileUrls);
   const [isOpen, setIsOpen] = useState(false);
-  const [address, setAddress] = useState("");
+  const [address, setAddress] = useRecoilState(recoilAddress);
   const [createItem] = useMutationItemWrite();
   const [uploadFile] = useMutationUpload();
 
@@ -90,5 +95,6 @@ export const useClickItemWrite = () => {
     onClickAddress,
     isOpen,
     address,
+    setAddress,
   };
 };

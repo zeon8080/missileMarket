@@ -28,13 +28,13 @@ export const FETCH_ITEM = gql`
 
 export const useQueryItem = () => {
   const router = useRouter();
-  const data = useQuery<Pick<IQuery, "fetchUseditem">, IQueryFetchUseditemArgs>(
-    FETCH_ITEM,
-    {
-      variables: {
-        useditemId: String(router.query.itemId),
-      },
-    }
-  );
-  return data;
+  const dataItem = useQuery<
+    Pick<IQuery, "fetchUseditem">,
+    IQueryFetchUseditemArgs
+  >(FETCH_ITEM, {
+    variables: {
+      useditemId: String(router.query.itemId),
+    },
+  });
+  return dataItem;
 };

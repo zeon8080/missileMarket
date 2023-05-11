@@ -17,3 +17,13 @@ export const restoreAccessTokenLoadable = selector({
     return newAccessToken;
   },
 });
+
+export const recoilFileUrls = atom({
+  key: "recoilFileUrls",
+  default: ["", "", ""],
+});
+
+export const recoilAddress = atom({
+  key: "recoilAddress",
+  default: "",
+});

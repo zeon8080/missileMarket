@@ -33,8 +33,9 @@ export default function ItemWrite(props: IItemWrite): JSX.Element {
     isOpen,
     setFileUrls,
     address,
+    setAddress,
   } = useClickItemWrite();
-  const { onClickEdit } = useClickEdit(props);
+  const { onClickEdit } = useClickEdit();
   const { register, handleSubmit, formState, setValue, trigger } =
     useForm<IItemWrite>({
       resolver: yupResolver(schema),
@@ -49,6 +50,11 @@ export default function ItemWrite(props: IItemWrite): JSX.Element {
   useEffect(() => {
     const images = props.data?.fetchUseditem.images;
     if (images !== undefined && images !== null) setFileUrls([...images]);
+  }, [props.data]);
+
+  useEffect(() => {
+    const address = props.data?.fetchUseditem.useditemAddress?.address;
+    if (address !== undefined && address !== null) setAddress(address);
   }, [props.data]);
 
   LoginCheck();
