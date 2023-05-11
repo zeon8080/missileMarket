@@ -39,17 +39,25 @@ export default function LayoutRecent() {
         </S.PickBox>
         <S.DivideLine></S.DivideLine>
         <S.Title>최근본상품</S.Title>
-        {todayList?.map((el: { images: any[] }) => (
-          <S.ImgBox>
-            <img
-              src={
-                el.images[0]
-                  ? `https://storage.googleapis.com/${el.images[0]}`
-                  : "/empty.png"
-              }
-            />
-          </S.ImgBox>
-        ))}
+
+        {todayList ? (
+          todayList.map((el: { images: any[] }) => (
+            <S.ImgBox>
+              <img
+                src={
+                  el.images[0]
+                    ? `https://storage.googleapis.com/${el.images[0]}`
+                    : "/empty.png"
+                }
+              />
+            </S.ImgBox>
+          ))
+        ) : (
+          <S.RecentBox>
+            <img src="/search.png" />
+            <span>없음</span>
+          </S.RecentBox>
+        )}
       </S.Box>
     </>
   );
