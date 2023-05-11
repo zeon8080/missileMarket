@@ -61,7 +61,7 @@ export default function PickedPage() {
             <S.ContentsBox>
               <p id={el._id}>{el.name}</p>
               <S.Contents>
-                <span id={el._id}>{el.price} 원</span>
+                <span id={el._id}>{el.price?.toLocaleString()} 원</span>
                 <span id={el._id}>{el.createdAt.slice(5, 10)}</span>
               </S.Contents>
             </S.ContentsBox>

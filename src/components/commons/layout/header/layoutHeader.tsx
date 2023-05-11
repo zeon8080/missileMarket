@@ -53,7 +53,7 @@ export default function LayoutHeader(): JSX.Element {
               {data?.fetchUserLoggedIn.name} 님
             </span>
             <span onClick={onClickMoveCharge}>
-              {data?.fetchUserLoggedIn.userPoint?.amount} P
+              {data?.fetchUserLoggedIn.userPoint?.amount.toLocaleString()} P
             </span>
             <span onClick={onClickLogout}>로그아웃</span>
           </div>

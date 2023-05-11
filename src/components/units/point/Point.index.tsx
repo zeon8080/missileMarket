@@ -27,7 +27,9 @@ export default function PointPage(): JSX.Element {
         <S.DivideLine></S.DivideLine>
         <S.UserBox>
           <span>잔여 포인트 :</span>
-          <span>{data?.fetchUserLoggedIn.userPoint?.amount} P</span>
+          <span>
+            {data?.fetchUserLoggedIn.userPoint?.amount.toLocaleString()} P
+          </span>
         </S.UserBox>
         <Script
           type="text/javascript"

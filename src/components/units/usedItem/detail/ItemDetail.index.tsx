@@ -39,7 +39,7 @@ export default function ItemDetail(): JSX.Element {
               <button onClick={onClickDeleteItem}>삭제</button>
             </S.EditBtnBox>
           </div>
-          <div>{data?.fetchUseditem.price} 원</div>
+          <div>{data?.fetchUseditem.price?.toLocaleString()} 원</div>
           <S.DivideLine></S.DivideLine>
           <div>{data?.fetchUseditem?.remarks}</div>
           <S.DivideLineGray></S.DivideLineGray>
