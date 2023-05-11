@@ -8,6 +8,7 @@ import {
   IPointForm,
   useClickPoint,
 } from "../../commons/hooks/customs/useClickPoint";
+import Script from "next/script";
 declare const window: typeof globalThis & {
   IMP: any;
 };
@@ -28,11 +29,11 @@ export default function PointPage(): JSX.Element {
           <span>잔여 포인트 :</span>
           <span>{data?.fetchUserLoggedIn.userPoint?.amount} P</span>
         </S.UserBox>
-        <script
+        <Script
           type="text/javascript"
           src="https://code.jquery.com/jquery-1.12.4.min.js"
-        ></script>
-        <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+        ></Script>
+        <Script src="https://cdn.iamport.kr/v1/iamport.js"></Script>
         <form onSubmit={handleSubmit(onClickKakaoCharge)}>
           <S.PointBox>
             <input
