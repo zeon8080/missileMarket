@@ -25,6 +25,10 @@ export default function LayoutRecent() {
     }
   }, []);
 
+  const onClickMoveDetail = (event: React.MouseEvent<HTMLDivElement>) => {
+    void router.push(`/items/${event?.currentTarget.id}`);
+  };
+
   return (
     <>
       <S.Box>
@@ -41,8 +45,8 @@ export default function LayoutRecent() {
         <S.Title>최근본상품</S.Title>
 
         {todayList ? (
-          todayList.map((el: { images: any[] }) => (
-            <S.ImgBox>
+          todayList.map((el: { _id: string; images: string }) => (
+            <S.ImgBox id={el._id} onClick={onClickMoveDetail}>
               <img
                 src={
                   el.images[0]
