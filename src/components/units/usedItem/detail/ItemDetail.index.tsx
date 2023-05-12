@@ -1,5 +1,3 @@
-import { useRouter } from "next/router";
-import { useClickDeleteItem } from "../../../commons/hooks/customs/useClickDelete";
 import { useClickBuy } from "../../../commons/hooks/customs/useClickBuy";
 import { useQueryItem } from "../../../commons/hooks/query/useQueryItem";
 import * as S from "./ItemDetail.styles";
@@ -7,6 +5,8 @@ import DOMPurify from "dompurify";
 import QuestionWrite from "../../usedItemQuestion/questionWrite/questionWrite.index";
 import QuestionList from "../../usedItemQuestion/questionList/questionList.index";
 import { useClickPick } from "../../../commons/hooks/customs/useClickPick";
+import { useRouter } from "next/router";
+import { useClickDeleteItem } from "../../../commons/hooks/customs/useClickDelete";
 
 export default function ItemDetail(): JSX.Element {
   const router = useRouter();
@@ -34,11 +34,10 @@ export default function ItemDetail(): JSX.Element {
         <S.TopBox>
           <div>
             <span>{data?.fetchUseditem?.name}</span>
-            {/* <S.EditBtnBox>
+            <S.EditBtnBox>
               <button onClick={onClickMoveEdit}>수정</button>
               <button onClick={onClickDeleteItem}>삭제</button>
-            </S.EditBtnBox> */}
-            <p>{data?.fetchUseditem.createdAt.slice(0, 10)}</p>
+            </S.EditBtnBox>
           </div>
           <div>{data?.fetchUseditem.price?.toLocaleString()} 원</div>
           <S.DivideLine></S.DivideLine>

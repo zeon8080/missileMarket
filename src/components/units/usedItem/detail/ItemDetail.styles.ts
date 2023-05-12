@@ -72,6 +72,23 @@ export const TopBox = styled.div`
   }
 `;
 
+export const EditBtnBox = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  > button {
+    font-size: 12px;
+    border: none;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    color: white;
+    background-color: #006fff;
+    cursor: pointer;
+    margin-left: 4px;
+  }
+`;
+
 export const BtnBox = styled.div`
   display: flex;
   flex-direction: row;
