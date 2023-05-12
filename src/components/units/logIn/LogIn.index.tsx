@@ -7,8 +7,8 @@ import * as S from "./Login.styles";
 import { schema } from "./Login.validation";
 
 export default function LoginForm() {
-  const { onClickLogin } = useClickLogin();
   const router = useRouter();
+  const { onClickLogin } = useClickLogin();
   const { register, handleSubmit, formState } = useForm<ILoginFormData>({
     resolver: yupResolver(schema),
     mode: "onChange",
