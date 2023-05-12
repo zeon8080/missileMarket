@@ -34,10 +34,11 @@ export default function ItemDetail(): JSX.Element {
         <S.TopBox>
           <div>
             <span>{data?.fetchUseditem?.name}</span>
-            <S.EditBtnBox>
+            {/* <S.EditBtnBox>
               <button onClick={onClickMoveEdit}>수정</button>
               <button onClick={onClickDeleteItem}>삭제</button>
-            </S.EditBtnBox>
+            </S.EditBtnBox> */}
+            <p>{data?.fetchUseditem.createdAt.slice(0, 10)}</p>
           </div>
           <div>{data?.fetchUseditem.price?.toLocaleString()} 원</div>
           <S.DivideLine></S.DivideLine>

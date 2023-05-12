@@ -53,6 +53,11 @@ export const TopBox = styled.div`
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 30px;
+
+    > p {
+      font-size: 14px;
+      color: #888888;
+    }
   }
 
   > :nth-of-type(2) {
@@ -64,23 +69,6 @@ export const TopBox = styled.div`
   > :nth-of-type(4) {
     height: 200px;
     margin: 20px 0;
-  }
-`;
-
-export const EditBtnBox = styled.div`
-  display: flex;
-  flex-direction: row;
-
-  > button {
-    font-size: 12px;
-    border: none;
-    width: 50px;
-    height: 30px;
-    text-align: center;
-    color: white;
-    background-color: #006fff;
-    cursor: pointer;
-    margin-left: 10px;
   }
 `;
 
