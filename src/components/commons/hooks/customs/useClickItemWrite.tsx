@@ -19,9 +19,6 @@ export interface IItemWrite {
   fileUrls?: UseFieldArrayReturn;
   isEdit?: boolean;
   data?: Pick<IQuery, "fetchUseditem">;
-  useditemAddress: {
-    address: string;
-  };
 }
 
 export const useClickItemWrite = () => {
