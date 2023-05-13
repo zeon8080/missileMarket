@@ -1,36 +1,39 @@
 import { MouseEvent } from "react";
 import {
   IQuery,
-  IQueryFetchUseditemsISoldArgs,
+  IQueryFetchUseditemsIPickedArgs,
 } from "../../../../commons/types/generated/types";
-import { FETCH_USER_ITEMS } from "../../../commons/hooks/query/useQueryUserItem";
-import * as S from "./ItemWrited.stlyes";
+import * as S from "./PickedStyles";
 import { useRouter } from "next/router";
 import { useQuery } from "@apollo/client";
+import _ from "lodash";
+import { FETCH_PICKED } from "../../../commons/hooks/query/useQueryPicked";
 
-export default function SoldItemListPage() {
+export default function PickedPage() {
   const router = useRouter();
   const { data, fetchMore } = useQuery<
-    Pick<IQuery, "fetchUseditemsISold">,
-    IQueryFetchUseditemsISoldArgs
-  >(FETCH_USER_ITEMS);
+    Pick<IQuery, "fetchUseditemsIPicked">,
+    IQueryFetchUseditemsIPickedArgs
+  >(FETCH_PICKED, {
+    variables: { search: "" },
+  });
 
   const onLoadMore = (): void => {
     if (!data) return;
     void fetchMore({
       variables: {
-        page: Math.ceil((data?.fetchUseditemsISold.length ?? 10) / 10 + 1),
+        page: Math.ceil((data?.fetchUseditemsIPicked.length ?? 10) / 10 + 1),
       },
       updateQuery: (prev, { fetchMoreResult }) => {
-        if (fetchMoreResult.fetchUseditemsISold === undefined) {
+        if (fetchMoreResult.fetchUseditemsIPicked === undefined) {
           return {
-            fetchUseditemsISold: [...prev.fetchUseditemsISold],
+            fetchUseditemsIPicked: [...prev.fetchUseditemsIPicked],
           };
         }
         return {
-          fetchUseditemsISold: [
-            ...(prev.fetchUseditemsISold ?? []),
-            ...(fetchMoreResult.fetchUseditemsISold ?? []),
+          fetchUseditemsIPicked: [
+            ...(prev.fetchUseditemsIPicked ?? []),
+            ...(fetchMoreResult.fetchUseditemsIPicked ?? []),
           ],
         };
       },
@@ -44,7 +47,7 @@ export default function SoldItemListPage() {
   return (
     <S.Container>
       <S.Scroll pageStart={0} loadMore={onLoadMore} hasMore={true}>
-        {data?.fetchUseditemsISold.map((el) => (
+        {data?.fetchUseditemsIPicked.map((el) => (
           <S.ItemBox key={el._id} id={el._id} onClick={onClickMoveDetail}>
             <S.ImgBox>
               <img

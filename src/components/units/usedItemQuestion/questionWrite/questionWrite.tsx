@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useClickQuestion } from "../../../commons/hooks/customs/useClickQuestion";
-import * as S from "./questionWrite.styles";
+import * as S from "./questionWriteStyles";
 import { ICreateUseditemQuestionInput } from "../../../../commons/types/generated/types";
 
 export default function QuestionWrite(): JSX.Element {

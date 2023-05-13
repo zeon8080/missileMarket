@@ -1,5 +1,5 @@
 import { useQueryItem } from "../../../../src/components/commons/hooks/query/useQueryItem";
-import ItemWrite from "../../../../src/components/units/usedItem/write/ItemWrite.index";
+import ItemWrite from "../../../../src/components/units/usedItem/write/ItemWrite";
 
 export default function ItemEditPage() {
   const { data } = useQueryItem();

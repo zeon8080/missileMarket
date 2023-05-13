@@ -1,9 +1,9 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { schema } from "./Join.validation";
+import { schema } from "./JoinValidation";
 import { useForm } from "react-hook-form";
 import { useClickJoin } from "../../commons/hooks/customs/useClickJoin";
-import { IJoinFormData } from "./Join.type";
-import * as S from "./Join.styles";
+import { IJoinFormData } from "./JoinType";
+import * as S from "./JoinStyles";
 import { useRouter } from "next/router";
 
 export default function JoinForm() {

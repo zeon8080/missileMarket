@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import { useQuery } from "@apollo/client";
 import { FETCH_ITEMS_LIST } from "../../../commons/hooks/query/useQueryItems";
 import _ from "lodash";
-import * as S from "./ItemList.styles";
+import * as S from "./ItemListStyles";
 
 export default function ItemList(): JSX.Element {
   const router = useRouter();

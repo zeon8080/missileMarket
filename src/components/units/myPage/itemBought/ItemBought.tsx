@@ -3,7 +3,7 @@ import {
   IQuery,
   IQueryFetchUseditemsIBoughtArgs,
 } from "../../../../commons/types/generated/types";
-import * as S from "./ItemBoight.styles";
+import * as S from "./ItemBoughtStyles";
 import { useRouter } from "next/router";
 import { useQuery } from "@apollo/client";
 import { FETCH_BOUGHT } from "../../../commons/hooks/query/useQueryBought";

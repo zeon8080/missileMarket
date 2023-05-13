@@ -1,11 +1,11 @@
 import { Tabs } from "antd";
-import * as S from "./Mypage.styles";
-import SoldItemListPage from "./itemWrited/ItemWrited.index";
+import * as S from "./MypageStyles";
+import SoldItemListPage from "./itemWrited/ItemWrited";
 import { useQuery } from "@apollo/client";
 import { IQuery } from "../../../commons/types/generated/types";
 import { FETCH_USER } from "../../commons/hooks/query/useQueryUser";
-import PickedPage from "./picked/Picked.index";
-import BoughtPage from "./itemBought/ItemBought.index";
+import PickedPage from "./picked/Picked";
+import BoughtPage from "./itemBought/ItemBought";
 
 export default function MyInfoPage(): JSX.Element {
   const { data } = useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER);

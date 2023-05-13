@@ -1,39 +1,36 @@
-import { ChangeEvent, MouseEvent, useState } from "react";
+import { MouseEvent } from "react";
 import {
   IQuery,
-  IQueryFetchUseditemsIPickedArgs,
+  IQueryFetchUseditemsISoldArgs,
 } from "../../../../commons/types/generated/types";
-import * as S from "./Picked.styles";
+import { FETCH_USER_ITEMS } from "../../../commons/hooks/query/useQueryUserItem";
+import * as S from "./ItemWritedStlyes";
 import { useRouter } from "next/router";
 import { useQuery } from "@apollo/client";
-import _ from "lodash";
-import { FETCH_PICKED } from "../../../commons/hooks/query/useQueryPicked";
 
-export default function PickedPage() {
+export default function SoldItemListPage() {
   const router = useRouter();
   const { data, fetchMore } = useQuery<
-    Pick<IQuery, "fetchUseditemsIPicked">,
-    IQueryFetchUseditemsIPickedArgs
-  >(FETCH_PICKED, {
-    variables: { search: "" },
-  });
+    Pick<IQuery, "fetchUseditemsISold">,
+    IQueryFetchUseditemsISoldArgs
+  >(FETCH_USER_ITEMS);
 
   const onLoadMore = (): void => {
     if (!data) return;
     void fetchMore({
       variables: {
-        page: Math.ceil((data?.fetchUseditemsIPicked.length ?? 10) / 10 + 1),
+        page: Math.ceil((data?.fetchUseditemsISold.length ?? 10) / 10 + 1),
       },
       updateQuery: (prev, { fetchMoreResult }) => {
-        if (fetchMoreResult.fetchUseditemsIPicked === undefined) {
+        if (fetchMoreResult.fetchUseditemsISold === undefined) {
           return {
-            fetchUseditemsIPicked: [...prev.fetchUseditemsIPicked],
+            fetchUseditemsISold: [...prev.fetchUseditemsISold],
           };
         }
         return {
-          fetchUseditemsIPicked: [
-            ...(prev.fetchUseditemsIPicked ?? []),
-            ...(fetchMoreResult.fetchUseditemsIPicked ?? []),
+          fetchUseditemsISold: [
+            ...(prev.fetchUseditemsISold ?? []),
+            ...(fetchMoreResult.fetchUseditemsISold ?? []),
           ],
         };
       },
@@ -47,7 +44,7 @@ export default function PickedPage() {
   return (
     <S.Container>
       <S.Scroll pageStart={0} loadMore={onLoadMore} hasMore={true}>
-        {data?.fetchUseditemsIPicked.map((el) => (
+        {data?.fetchUseditemsISold.map((el) => (
           <S.ItemBox key={el._id} id={el._id} onClick={onClickMoveDetail}>
             <S.ImgBox>
               <img

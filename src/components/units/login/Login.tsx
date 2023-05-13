@@ -2,11 +2,11 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useClickLogin } from "../../commons/hooks/customs/useClickLogin";
-import { ILoginFormData } from "./Login.type";
-import * as S from "./Login.styles";
-import { schema } from "./Login.validation";
+import { ILoginFormData } from "./LoginType";
+import * as S from "./LoginStyles";
+import { schema } from "./LoginValidation";
 
-export default function LoginForm() {
+export default function LoginForm(): JSX.Element {
   const router = useRouter();
   const { onClickLogin } = useClickLogin();
   const { register, handleSubmit, formState } = useForm<ILoginFormData>({
@@ -16,6 +16,7 @@ export default function LoginForm() {
   const onClickMoveJoin = (): void => {
     void router.push("/join");
   };
+
   return (
     <form onSubmit={handleSubmit(onClickLogin)}>
       <S.Container>

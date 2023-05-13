@@ -1,9 +1,9 @@
 import { useClickBuy } from "../../../commons/hooks/customs/useClickBuy";
 import { useQueryItem } from "../../../commons/hooks/query/useQueryItem";
-import * as S from "./ItemDetail.styles";
+import * as S from "./ItemDetailStyles";
 import DOMPurify from "dompurify";
-import QuestionWrite from "../../usedItemQuestion/questionWrite/questionWrite.index";
-import QuestionList from "../../usedItemQuestion/questionList/questionList.index";
+import QuestionWrite from "../../usedItemQuestion/questionWrite/questionWrite";
+import QuestionList from "../../usedItemQuestion/questionList/questionList";
 import { useClickPick } from "../../../commons/hooks/customs/useClickPick";
 import { useRouter } from "next/router";
 import { useClickDeleteItem } from "../../../commons/hooks/customs/useClickDelete";

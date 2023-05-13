@@ -9,7 +9,7 @@ import {
 import { FETCH_QUESTIONS } from "../../../commons/hooks/query/useQueryQuestion";
 import { useClickQuestion } from "../../../commons/hooks/customs/useClickQuestion";
 import { useClickQuestionEdit } from "../../../commons/hooks/customs/useClickQuestionEdit";
-import * as S from "./questionList.styles";
+import * as S from "./questionListStyles";
 
 export default function QuestionList() {
   const router = useRouter();

@@ -125,7 +125,9 @@ export default function BoardWrite(props: IBoardWrite): JSX.Element {
             },
           },
         });
-
+        Modal.success({
+          content: "등록되었습니다.",
+        });
         router.push(`/boards/${result.data?.createBoard._id}`);
       } catch (error) {
         if (error instanceof Error)
@@ -133,10 +135,6 @@ export default function BoardWrite(props: IBoardWrite): JSX.Element {
             content: "등록에 실패하였습니다.",
           });
       }
-
-      Modal.success({
-        content: "등록되었습니다.",
-      });
     }
   }
 

@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 import { accessTokenState } from "../../../../commons/stores";
 import { useMutationLogin } from "../mutation/useMutationLogin";
 import { Modal } from "antd";
-import { ILoginFormData } from "../../../units/login/Login.type";
+import { ILoginFormData } from "../../../units/login/LoginType";
 
 export const useClickLogin = () => {
   const router = useRouter();

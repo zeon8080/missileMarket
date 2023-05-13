@@ -6,11 +6,11 @@ import {
 import { useQueryItem } from "../../../commons/hooks/query/useQueryItem";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { schema } from "./ItemWrite.validation";
+import { schema } from "./ItemWriteValidation";
 import { LoginCheck } from "../../../commons/hocs/useAuth";
 import { useClickEdit } from "../../../commons/hooks/customs/useClickEdit";
 import "react-quill/dist/quill.snow.css";
-import * as S from "./ItemWrite.styles";
+import * as S from "./ItemWriteStyles";
 import { Modal } from "antd";
 import DaumPostcodeEmbed from "react-daum-postcode";
 import UploadBasic from "../../../commons/uploadBasic/UploadBasic.container";

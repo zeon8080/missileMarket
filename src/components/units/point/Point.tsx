@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import * as S from "./Point.styles";
+import * as S from "./PointStyles";
 import { IQuery } from "../../../commons/types/generated/types";
 import { FETCH_USER } from "../../commons/hooks/query/useQueryUser";
 import { LoginCheck } from "../../commons/hocs/useAuth";

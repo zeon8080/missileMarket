@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useMutationJoin } from "../mutation/useMutationJoin";
-import { IJoinFormData } from "../../../units/join/Join.type";
+import { IJoinFormData } from "../../../units/join/JoinType";
 import { Modal } from "antd";
 
 export const useClickJoin = () => {
