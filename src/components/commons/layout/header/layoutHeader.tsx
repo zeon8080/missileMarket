@@ -32,7 +32,7 @@ export default function LayoutHeader(): JSX.Element {
   };
 
   const onClickMoveItems = () => {
-    void router.push("http://localhost:3000");
+    void router.push("/");
   };
 
   const onClickMoveBoards = () => {

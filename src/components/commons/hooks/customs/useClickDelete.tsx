@@ -14,7 +14,7 @@ export const useClickDeleteItem = () => {
         },
       });
       Modal.success({ content: "삭제되었습니다." });
-      router.push("http://localhost:3000");
+      router.push("/");
     } catch (error) {
       if (error instanceof Error) Modal.error({ content: error.message });
     }
