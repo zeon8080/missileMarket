@@ -5,7 +5,7 @@ export const UploadImage = styled.img`
   height: 100px;
   margin-right: 24px;
   cursor: pointer;
-  object-fit: cover;
+  object-fit: contain;
 `;
 
 export const UploadButton = styled.button`

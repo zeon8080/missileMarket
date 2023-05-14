@@ -11,9 +11,9 @@ export const Container = styled.div`
 export const Scroll = styled(InfiniteScroll)`
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 28px;
   width: 1024px;
   margin: 40px 0;
 `;

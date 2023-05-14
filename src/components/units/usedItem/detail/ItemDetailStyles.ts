@@ -19,7 +19,7 @@ export const DivideLineGray = styled.div`
 export const TopWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  /* justify-content: center; */
+  justify-content: center;
   width: 1024px;
   height: 400px;
   margin-bottom: 40px;
@@ -134,6 +134,7 @@ export const BtnBox = styled.div`
 export const BodyWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   width: 1024px;
 `;
 
