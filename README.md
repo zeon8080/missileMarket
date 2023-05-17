@@ -1,67 +1,36 @@
-# 미사일마켓
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-### 주소
+## Getting Started
 
-https://zeon8080.store/
+First, run the development server:
 
-### 소개
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-글 작성과 댓글 작성이 가능한 자유게시판 & 상품을 판매하고 구매할 수 있는 중고 마켓
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### 개발 기간
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-2023년 05월 1일 ~ 2023년 5월 15일
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-### 기술
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-- HTML, CSS, JavaScript, TypeScript, React, Next.js, GraphQL
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-- AWS
+## Learn More
 
-### 기술 선택 이유
+To learn more about Next.js, take a look at the following resources:
 
-- React
-  리액트의 Virtual DOM 기능으로 실제 DOM으로 적용하기 전에 가상 DOM을 만들어 최종 완성된 결과만을 전달하기 때문에 브라우저의 연산양을 줄여 성능을 개선시켜서 좋고, 코드의 재사용성이 높기 때문에 사용하였습니다.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- TypeScript
-  명시적인 정적타입으로 컴파일 단계에서 오류를 포착하여 코드의 가독성을 높여 디버깅이 쉽기 때문에 선택하였습니다.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-- GraphQL
-  구체적이고 정확하게 받아오고 싶은 데이터만 가져올 수 있으므로 불필요한 Over-fetching을 해결하였습니다.
+## Deploy on Vercel
 
-### 구현 기능
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### 게시글 작성 / 수정 / 삭제 / 조회 / 댓글
-
-![게시글작성](https://github.com/zeon8080/missileMarket/assets/119851517/3c632103-1d46-4367-aab7-714cee77ac8e)
-![댓글작성](https://github.com/zeon8080/missileMarket/assets/119851517/4674d920-5bc3-464b-98b2-4e6eef1934bf)
-
-- 게시글 작성시 첨부 파일 기능과 링크 첨부 기능이 있습니다.
-- 게시글에 댓글 작성, 수정, 삭제가 가능합니다.
-
-### 상품 작성 / 수정 / 삭제 / 조회 / 댓글
-
-![상품작성-min](https://github.com/zeon8080/missileMarket/assets/119851517/3406efa7-5d2a-49b1-aa4e-7428f61c761e)
-![상품댓글](https://github.com/zeon8080/missileMarket/assets/119851517/09d68e96-5aa0-444f-a4c8-4bbde7a20dcf)
-
-- 상품 작성시 첨부 파일 기능과 React-quill을 적용하였습니다.
-- 상품 게시글에 댓글 작성, 수정, 삭제가 가능합니다.
-
-### 충전 / 구매
-
-![충전](https://github.com/zeon8080/missileMarket/assets/119851517/433e188b-8aeb-4ee7-8617-de9d4b10f111)
-![상품구매](https://github.com/zeon8080/missileMarket/assets/119851517/cf77bf08-c895-48a7-b6a1-3e30a17eb1b5)
-
-- 외부 솔루션(카카오)를 이용한 충전, 구매가 가능합니다.
-
-### 마이페이지
-
-![마이페이지](https://github.com/zeon8080/missileMarket/assets/119851517/b67c8487-ac67-4853-9217-60de753b0a10)
-
-- 찜한 상품, 판매 중인 상품, 구매한 상품을 확인할 수 있습니다.
-
-### 로그인 / 회원가입 / 권한분기
-
-![로그인](https://github.com/zeon8080/missileMarket/assets/119851517/6f0c198f-71c1-441e-9574-0ac54e24ea61)
-
-- 회원가입 로그인 기능이 정상적으로 구현되었고, 특정 페이지에서 로그인 권한분기 처리가 되어있습니다.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
