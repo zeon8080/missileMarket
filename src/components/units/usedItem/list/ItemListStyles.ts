@@ -1,6 +1,9 @@
 import styled from "@emotion/styled";
 import InfiniteScroll from "react-infinite-scroller";
 
+const breakpoints = [768, 1024];
+const mq = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -16,6 +19,15 @@ export const Scroll = styled(InfiniteScroll)`
   gap: 28px;
   width: 1024px;
   margin: 40px 0;
+
+  ${mq[0]} {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 20px;
+    width: 100%;
+    overflow: auto;
+  }
 `;
 
 export const SearchBox = styled.div`
@@ -30,6 +42,10 @@ export const SearchBox = styled.div`
     width: 600px;
     height: 46px;
     padding: 0 10px;
+
+    ${mq[0]} {
+      width: 50%;
+    }
   }
 
   > button {
