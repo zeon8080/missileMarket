@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+const breakpoints = [768, 1024];
+const mq = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
 
 export const Title = styled.div`
   font-size: 12px;
@@ -112,6 +114,10 @@ export const Box = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  ${mq[0]} {
+    display: none;
+  }
 `;
 
 export const DivideLine = styled.div`
