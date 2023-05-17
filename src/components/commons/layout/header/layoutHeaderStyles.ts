@@ -19,7 +19,6 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     height: 100px;
-    position: absolute;
   }
 `;
 
@@ -36,7 +35,6 @@ export const Wrapper = styled.div`
     cursor: pointer;
 
     ${mq[0]} {
-      width: 80px;
       font-size: 12px;
     }
     :hover {
@@ -44,19 +42,19 @@ export const Wrapper = styled.div`
     }
   }
 
-  ${mq[0]} {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 8px 0 3px 0;
-    border-bottom: 1px solid #eeeeee;
-  }
-
   ${mq[1]} {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
+  }
+
+  ${mq[0]} {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 8px 0 3px 0;
+    border-bottom: 1px solid #eeeeee;
   }
 `;
 
@@ -80,12 +78,39 @@ export const Menu = styled.div`
     }
   }
 
+  ${mq[1]} {
+    display: flex;
+    flex-direction: row;
+    padding-left: 100px;
+    justify-content: space-between;
+  }
   ${mq[0]} {
     position: absolute;
     top: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+`;
+
+export const LogoutMenu = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 130px;
+  margin-right: 110px;
+
+  > p {
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    :hover {
+      color: #006fff;
+    }
+
+    ${mq[0]} {
+      padding: 5px;
+      font-size: 14px;
+    }
   }
 
   ${mq[1]} {
@@ -93,6 +118,13 @@ export const Menu = styled.div`
     flex-direction: row;
     padding-left: 100px;
     justify-content: space-between;
+  }
+
+  ${mq[0]} {
+    position: absolute;
+    top: 50%;
+    padding: 0;
+    margin: 0;
   }
 `;
 
