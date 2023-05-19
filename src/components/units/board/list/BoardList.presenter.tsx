@@ -39,7 +39,7 @@ export default function BoardListUI(props: IBoardListsUI) {
                     </span>
                   ))}
               </S.ListLong>
-              <S.ListShort>{el.writer?.slice(0, 8)}</S.ListShort>
+              <S.ListShort>{el.writer?.slice(0, 6)}</S.ListShort>
             </S.ListBox>
           ))}
         </S.ListMiddle>
