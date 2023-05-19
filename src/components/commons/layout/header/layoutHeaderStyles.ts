@@ -14,6 +14,13 @@ export const Container = styled.div`
   top: 0;
   z-index: 1;
 
+  ${mq[1]} {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100px;
+  }
+
   ${mq[0]} {
     display: flex;
     flex-direction: column;
@@ -47,6 +54,8 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding: 8px 0 3px 0;
+    border-bottom: 1px solid #eeeeee;
   }
 
   ${mq[0]} {
@@ -79,11 +88,12 @@ export const Menu = styled.div`
   }
 
   ${mq[1]} {
-    display: flex;
-    flex-direction: row;
-    padding-left: 100px;
-    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    padding: 0;
+    margin: 0;
   }
+
   ${mq[0]} {
     position: absolute;
     top: 50%;
@@ -114,10 +124,10 @@ export const LogoutMenu = styled.div`
   }
 
   ${mq[1]} {
-    display: flex;
-    flex-direction: row;
-    padding-left: 100px;
-    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    padding: 0;
+    margin: 0;
   }
 
   ${mq[0]} {
