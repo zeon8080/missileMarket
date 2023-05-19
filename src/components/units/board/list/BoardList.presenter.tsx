@@ -25,7 +25,7 @@ export default function BoardListUI(props: IBoardListsUI) {
               <S.ListShort>{el.createdAt.slice(0, 10)}</S.ListShort>
               <S.ListLong>
                 {el.title
-                  .slice(0, 20)
+                  .slice(0, 10)
                   .replaceAll(props.keyword, `!@#${props.keyword}!@#`)
                   .split("!@#")
                   .map((el: string) => (

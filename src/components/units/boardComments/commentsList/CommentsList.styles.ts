@@ -1,4 +1,7 @@
 import styled from "@emotion/styled";
+const breakpoints = [500, 768, 1024];
+const mq = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
+
 import { Modal } from "antd";
 
 export const Container = styled.div`
@@ -16,12 +19,28 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 768px;
   border-bottom: 1px solid #eeeeee;
+
+  ${mq[1]} {
+    width: 90%;
+  }
+
+  ${mq[0]} {
+    width: 90%;
+  }
 `;
 
 export const DivideLineGray = styled.div`
   width: 480px;
   border: 0.5px solid #eeeeee;
   margin: 0 0 20px 0;
+
+  ${mq[1]} {
+    width: 100%;
+  }
+
+  ${mq[0]} {
+    width: 100%;
+  }
 `;
 export const UserBox = styled.div`
   display: flex;
@@ -30,14 +49,40 @@ export const UserBox = styled.div`
   align-items: center;
   width: 480px;
 
+  ${mq[1]} {
+    width: 100%;
+  }
+
+  ${mq[0]} {
+    width: 100%;
+  }
+
   > div {
     width: 398px;
     height: 40px;
+
+    ${mq[1]} {
+      width: 100%;
+    }
+
+    ${mq[0]} {
+      width: 100%;
+    }
   }
 
   > span {
     font-size: 14px;
     color: #888888;
+
+    ${mq[1]} {
+      width: 30%;
+      font-size: 12px;
+    }
+
+    ${mq[0]} {
+      width: 30%;
+      font-size: 12px;
+    }
   }
 `;
 
@@ -45,6 +90,14 @@ export const Contents = styled.div`
   width: 480px;
   height: 80px;
   font-size: 14px;
+
+  ${mq[1]} {
+    width: 100%;
+  }
+
+  ${mq[0]} {
+    width: 100%;
+  }
 `;
 
 export const BtnBox = styled.div`
@@ -53,6 +106,13 @@ export const BtnBox = styled.div`
   justify-content: flex-end;
   width: 480px;
   margin-bottom: 20px;
+  ${mq[1]} {
+    width: 100%;
+  }
+
+  ${mq[0]} {
+    width: 100%;
+  }
 
   > button {
     border: none;
