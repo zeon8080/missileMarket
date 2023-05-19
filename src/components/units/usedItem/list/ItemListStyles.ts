@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import InfiniteScroll from "react-infinite-scroller";
 
-const breakpoints = [768, 1024];
+const breakpoints = [500, 768, 1024];
 const mq = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
 
 export const Container = styled.div`
