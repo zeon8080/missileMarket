@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+const breakpoints = [500, 768, 1024];
+const mq = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
 
 export const Container = styled.div`
   display: flex;
@@ -14,6 +16,14 @@ export const Wrapper = styled.div`
   align-items: flex-start;
   width: 1024px;
   margin: 40px 0;
+
+  ${mq[1]} {
+    width: 90%;
+  }
+
+  ${mq[0]} {
+    width: 90%;
+  }
 `;
 
 export const SearchBox = styled.div`
@@ -28,6 +38,14 @@ export const SearchBox = styled.div`
     width: 600px;
     height: 46px;
     padding: 0 10px;
+
+    ${mq[1]} {
+      width: 50%;
+    }
+
+    ${mq[0]} {
+      width: 50%;
+    }
   }
 
   > button {
@@ -72,11 +90,31 @@ export const ListBox = styled.div`
 export const ListShort = styled.div`
   width: 15%;
   text-align: center;
+
+  ${mq[1]} {
+    width: 20%;
+    font-size: 12px;
+  }
+
+  ${mq[0]} {
+    width: 20%;
+    font-size: 12px;
+  }
 `;
 
 export const ListLong = styled.div`
   width: 70%;
   text-align: center;
+
+  ${mq[1]} {
+    width: 60%;
+    font-size: 16px;
+  }
+
+  ${mq[0]} {
+    width: 60%;
+    font-size: 16px;
+  }
 `;
 
 export const ListsFooter = styled.div`
