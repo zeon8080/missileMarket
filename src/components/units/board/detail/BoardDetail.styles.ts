@@ -63,10 +63,12 @@ export const Top = styled.div`
     font-size: 26px;
 
     ${mq[1]} {
+      margin-right: 16px;
       font-size: 20px;
     }
 
     ${mq[0]} {
+      margin-right: 16px;
       font-size: 20px;
     }
   }
