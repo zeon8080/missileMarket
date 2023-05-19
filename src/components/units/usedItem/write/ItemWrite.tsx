@@ -14,11 +14,7 @@ import * as S from "./ItemWriteStyles";
 import { Modal } from "antd";
 import DaumPostcodeEmbed from "react-daum-postcode";
 import UploadBasic from "../../../commons/uploadBasic/UploadBasic.container";
-import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-const ReactQuill = dynamic(async () => await import("react-quill"), {
-  ssr: false,
-});
 
 export default function ItemWrite(props: IItemWrite): JSX.Element {
   const [contents, setContents] = useState("");
@@ -95,7 +91,7 @@ export default function ItemWrite(props: IItemWrite): JSX.Element {
           <S.Errors>{formState.errors.price?.message}</S.Errors>
           <S.DivideLineGray></S.DivideLineGray>
           <S.UserInfoBox>
-            <div>한줄 요약*</div>
+            <div>상품 요약*</div>
             <input
               type="text"
               {...register("remarks")}
@@ -106,11 +102,10 @@ export default function ItemWrite(props: IItemWrite): JSX.Element {
           <S.DivideLineGray></S.DivideLineGray>
           <S.QuillBox>
             <div>상품 설명*</div>
-            <ReactQuill
-              style={{ height: "200px", width: "600px", marginBottom: "40px" }}
+            <S.Quill
               onChange={onChangeContents}
               value={contents ? contents : data?.fetchUseditem.contents ?? ""}
-            ></ReactQuill>
+            ></S.Quill>
           </S.QuillBox>
           <S.Errors>{formState.errors.contents?.message}</S.Errors>
           <S.DivideLineGray></S.DivideLineGray>
@@ -142,7 +137,7 @@ export default function ItemWrite(props: IItemWrite): JSX.Element {
           </S.AddressBox>
           <S.DivideLineGray></S.DivideLineGray>
           <S.ImageBox>
-            <div>사진</div>
+            <p>사진</p>
             {fileUrls.map((el, index) => (
               <UploadBasic
                 key={uuidv4()}

@@ -3,7 +3,7 @@ import * as S from "./UploadBasic.styles";
 
 export default function UploadBasicUi(props: IUploadBasicUI): JSX.Element {
   return (
-    <>
+    <S.Wrapper>
       {props.fileUrl !== "" ? (
         <S.UploadImage
           onClick={props.onClickUpload}
@@ -19,6 +19,6 @@ export default function UploadBasicUi(props: IUploadBasicUI): JSX.Element {
         ref={props.fileRef}
         onChange={props.onChangeFile}
       />
-    </>
+    </S.Wrapper>
   );
 }

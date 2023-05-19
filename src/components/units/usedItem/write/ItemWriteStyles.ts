@@ -1,4 +1,10 @@
 import styled from "@emotion/styled";
+import dynamic from "next/dynamic";
+const ReactQuill = dynamic(async () => await import("react-quill"), {
+  ssr: false,
+});
+const breakpoints = [500, 768, 1024];
+const mq = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
 
 export const Container = styled.div`
   display: flex;
@@ -14,18 +20,42 @@ export const Wrapper = styled.div`
   align-items: flex-start;
   width: 1024px;
   margin: 40px 0;
+
+  ${mq[1]} {
+    width: 90%;
+  }
+
+  ${mq[0]} {
+    width: 90%;
+  }
 `;
 
 export const DivideLine = styled.div`
   width: 100%;
   border: 1px solid #888888;
   margin: 20px 0 40px 0;
+
+  ${mq[1]} {
+    margin: 0 0 20px 0;
+  }
+
+  ${mq[0]} {
+    margin: 0 0 20px 0;
+  }
 `;
 
 export const DivideLineGray = styled.div`
   width: 100%;
   border: 0.5px solid #eeeeee;
   margin: 20px 0 40px 0;
+
+  ${mq[1]} {
+    margin: 8px 0;
+  }
+
+  ${mq[0]} {
+    margin: 8px 0;
+  }
 `;
 
 export const WrapperTitle = styled.div`
@@ -43,12 +73,34 @@ export const UserInfoBox = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
+  width: 100%;
+
+  ${mq[1]} {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+  ${mq[0]} {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
 
   > div {
     display: flex;
     align-items: center;
     width: 200px;
     font-size: 18px;
+
+    ${mq[1]} {
+      width: 100%;
+      margin-bottom: 4px;
+    }
+
+    ${mq[0]} {
+      width: 100%;
+      margin-bottom: 4px;
+    }
   }
 
   > input {
@@ -56,6 +108,16 @@ export const UserInfoBox = styled.div`
     height: 40px;
     font-size: 14px;
     padding: 0 4px;
+
+    ${mq[1]} {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    ${mq[0]} {
+      width: 100%;
+      box-sizing: border-box;
+    }
   }
 `;
 
@@ -63,10 +125,45 @@ export const QuillBox = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
+  width: 100%;
+
+  ${mq[1]} {
+    display: flex;
+    flex-direction: column;
+  }
+
+  ${mq[0]} {
+    display: flex;
+    flex-direction: column;
+  }
 
   > :nth-of-type(1) {
     font-size: 18px;
     margin-right: 128px;
+
+    ${mq[1]} {
+      margin-bottom: 8px;
+    }
+
+    ${mq[0]} {
+      margin-bottom: 8px;
+    }
+  }
+`;
+
+export const Quill = styled(ReactQuill)`
+  width: 600px;
+  height: 200px;
+  margin-bottom: 40px;
+
+  ${mq[1]} {
+    width: 100%;
+    height: 140px;
+  }
+
+  ${mq[0]} {
+    width: 100%;
+    height: 140px;
   }
 `;
 
@@ -74,12 +171,33 @@ export const AddressBox = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
+  width: 100%;
+
+  ${mq[1]} {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+
+  ${mq[0]} {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
 
   > p {
     display: flex;
     align-items: center;
     width: 200px;
     font-size: 18px;
+
+    ${mq[1]} {
+      margin-bottom: 8px;
+    }
+
+    ${mq[0]} {
+      margin-bottom: 8px;
+    }
   }
 `;
 
@@ -87,6 +205,18 @@ export const AddressInfoBox = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  ${mq[1]} {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  ${mq[0]} {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
   > button {
     font-size: 14px;
@@ -98,6 +228,14 @@ export const AddressInfoBox = styled.div`
     background-color: #006fff;
     cursor: pointer;
     margin-right: 10px;
+
+    ${mq[1]} {
+      margin-bottom: 8px;
+    }
+
+    ${mq[0]} {
+      margin-bottom: 8px;
+    }
   }
   > input {
     width: 280px;
@@ -105,6 +243,16 @@ export const AddressInfoBox = styled.div`
     font-size: 14px;
     text-align: center;
     padding-right: 10px;
+
+    ${mq[1]} {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    ${mq[0]} {
+      width: 100%;
+      box-sizing: border-box;
+    }
   }
 `;
 
@@ -113,11 +261,21 @@ export const ImageBox = styled.div`
   flex-direction: row;
   margin-bottom: 20px;
 
-  > div {
+  > p {
     display: flex;
     align-items: center;
     width: 200px;
     font-size: 18px;
+
+    ${mq[1]} {
+      width: 100%;
+      margin-right: 50px;
+    }
+
+    ${mq[0]} {
+      width: 100%;
+      margin-right: 30px;
+    }
   }
 `;
 

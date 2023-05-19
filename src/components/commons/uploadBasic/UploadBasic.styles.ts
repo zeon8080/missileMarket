@@ -1,4 +1,12 @@
 import styled from "@emotion/styled";
+const breakpoints = [500, 768, 1024];
+const mq = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
 
 export const UploadImage = styled.img`
   width: 100px;
@@ -19,6 +27,10 @@ export const UploadButton = styled.button`
   border: none;
   cursor: pointer;
 
+  ${mq[0]} {
+    width: 80px;
+    height: 80px;
+  }
   > span {
     font-size: 50px;
   }
