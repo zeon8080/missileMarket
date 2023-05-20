@@ -57,7 +57,7 @@ export default function BoardWriteUI(props: IBoardWriteUI) {
         <S.DivideLineGray></S.DivideLineGray>
 
         <S.ImageBox>
-          <div>사진 등록</div>
+          <p>이미지</p>
           {props.fileUrls.map((el, index) => (
             <UploadBasic
               key={uuidv4()}

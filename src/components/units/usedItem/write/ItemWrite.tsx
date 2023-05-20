@@ -110,7 +110,7 @@ export default function ItemWrite(props: IItemWrite): JSX.Element {
           <S.Errors>{formState.errors.contents?.message}</S.Errors>
           <S.DivideLineGray></S.DivideLineGray>
           <S.AddressBox>
-            <p>장소</p>
+            <p>위치</p>
             {isOpen && (
               <Modal
                 open={true}

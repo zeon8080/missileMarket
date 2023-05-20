@@ -259,7 +259,7 @@ export const AddressInfoBox = styled.div`
 export const ImageBox = styled.div`
   display: flex;
   flex-direction: row;
-  margin-bottom: 20px;
+  margin: 10px 0 20px 0;
 
   > p {
     display: flex;

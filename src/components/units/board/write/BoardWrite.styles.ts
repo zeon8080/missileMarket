@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 import { IProps } from "./BoardWrite.types";
+const breakpoints = [500, 768, 1024];
+const mq = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
 
 export const Container = styled.div`
   display: flex;
@@ -15,18 +17,42 @@ export const Wrapper = styled.div`
   align-items: flex-start;
   width: 1024px;
   margin: 40px 0;
+
+  ${mq[1]} {
+    width: 90%;
+  }
+
+  ${mq[0]} {
+    width: 90%;
+  }
 `;
 
 export const DivideLine = styled.div`
   width: 100%;
   border: 1px solid #888888;
   margin: 20px 0 40px 0;
+
+  ${mq[1]} {
+    margin: 0 0 20px 0;
+  }
+
+  ${mq[0]} {
+    margin: 0 0 20px 0;
+  }
 `;
 
 export const DivideLineGray = styled.div`
   width: 100%;
   border: 0.5px solid #eeeeee;
   margin: 20px 0 40px 0;
+
+  ${mq[1]} {
+    margin: 8px 0;
+  }
+
+  ${mq[0]} {
+    margin: 8px 0;
+  }
 `;
 
 export const WrapperTitle = styled.div`
@@ -44,12 +70,22 @@ export const UserInfoBox = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
+  width: 100%;
 
   > div {
     display: flex;
     align-items: center;
     width: 200px;
     font-size: 18px;
+
+    ${mq[1]} {
+      margin-bottom: 4px;
+    }
+
+    ${mq[0]} {
+      width: 100%;
+      margin-bottom: 4px;
+    }
   }
 
   > input {
@@ -57,6 +93,16 @@ export const UserInfoBox = styled.div`
     height: 40px;
     font-size: 14px;
     padding: 0 4px;
+
+    ${mq[1]} {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    ${mq[0]} {
+      width: 100%;
+      box-sizing: border-box;
+    }
   }
 `;
 
@@ -64,12 +110,34 @@ export const TitleBox = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
+  width: 100%;
+
+  ${mq[1]} {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+  ${mq[0]} {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
 
   > div {
     display: flex;
     align-items: center;
     width: 200px;
     font-size: 18px;
+
+    ${mq[1]} {
+      width: 100%;
+      margin-bottom: 4px;
+    }
+
+    ${mq[0]} {
+      width: 100%;
+      margin-bottom: 4px;
+    }
   }
 
   > input {
@@ -77,6 +145,16 @@ export const TitleBox = styled.div`
     height: 40px;
     font-size: 14px;
     padding: 0 4px;
+
+    ${mq[1]} {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    ${mq[0]} {
+      width: 100%;
+      box-sizing: border-box;
+    }
   }
 `;
 
@@ -84,12 +162,31 @@ export const ContentsBox = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
+  width: 100%;
+
+  ${mq[1]} {
+    display: flex;
+    flex-direction: column;
+  }
+
+  ${mq[0]} {
+    display: flex;
+    flex-direction: column;
+  }
 
   > div {
     display: flex;
     align-items: center;
     width: 200px;
     font-size: 18px;
+
+    ${mq[1]} {
+      margin-bottom: 8px;
+    }
+
+    ${mq[0]} {
+      margin-bottom: 8px;
+    }
   }
 
   > textarea {
@@ -98,19 +195,42 @@ export const ContentsBox = styled.div`
     font-size: 14px;
     padding: 10px 4px;
     resize: none;
+
+    ${mq[1]} {
+      width: 100%;
+      height: 140px;
+      box-sizing: border-box;
+    }
+
+    ${mq[0]} {
+      width: 100%;
+      height: 140px;
+      box-sizing: border-box;
+    }
   }
 `;
 
 export const ImageBox = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
   margin-bottom: 20px;
 
-  > div {
+  > p {
     display: flex;
     align-items: center;
     width: 200px;
     font-size: 18px;
+
+    ${mq[1]} {
+      width: 100%;
+      margin-right: 50px;
+    }
+
+    ${mq[0]} {
+      width: 100%;
+      margin-right: 30px;
+    }
   }
 `;
 
@@ -118,12 +238,34 @@ export const YoutubeBox = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
+  width: 100%;
+
+  ${mq[1]} {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+  ${mq[0]} {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
 
   > div {
     display: flex;
     align-items: center;
     width: 200px;
     font-size: 18px;
+
+    ${mq[1]} {
+      width: 100%;
+      margin-bottom: 4px;
+    }
+
+    ${mq[0]} {
+      width: 100%;
+      margin-bottom: 4px;
+    }
   }
 
   > input {
@@ -131,6 +273,18 @@ export const YoutubeBox = styled.div`
     height: 40px;
     font-size: 14px;
     padding: 0 4px;
+
+    ${mq[1]} {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+
+    ${mq[0]} {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
   }
 `;
 
