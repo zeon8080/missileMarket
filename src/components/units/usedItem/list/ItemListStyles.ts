@@ -52,6 +52,10 @@ export const SearchBox = styled.div`
     height: 46px;
     padding: 0 10px;
 
+    ${mq[1]} {
+      width: 50%;
+    }
+
     ${mq[0]} {
       width: 50%;
     }
@@ -75,6 +79,11 @@ export const ItemBox = styled.div`
   border: 1px solid #eeeeee;
   cursor: pointer;
 
+  ${mq[1]} {
+    width: 100px;
+    height: 174px;
+  }
+
   ${mq[0]} {
     width: 100px;
     height: 174px;
@@ -96,6 +105,11 @@ export const ImgBox = styled.div`
     object-fit: contain;
   }
 
+  ${mq[1]} {
+    width: 100px;
+    height: 100px;
+  }
+
   ${mq[0]} {
     width: 100px;
     height: 100px;
@@ -112,9 +126,17 @@ export const ContentsBox = styled.div`
     font-size: 18px;
     margin: 0 8px;
 
+    ${mq[1]} {
+      font-size: 12px;
+    }
+
     ${mq[0]} {
       font-size: 12px;
     }
+  }
+
+  ${mq[1]} {
+    width: 100px;
   }
 
   ${mq[0]} {
@@ -128,6 +150,13 @@ export const Contents = styled.div`
   align-items: flex-end;
   margin: 0 8px;
 
+  ${mq[1]} {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
   ${mq[0]} {
     display: flex;
     flex-direction: column;
@@ -138,6 +167,10 @@ export const Contents = styled.div`
   > :nth-of-type(1) {
     font-weight: bold;
 
+    ${mq[1]} {
+      font-size: 12px;
+    }
+
     ${mq[0]} {
       font-size: 12px;
     }
@@ -146,6 +179,10 @@ export const Contents = styled.div`
   > :nth-of-type(2) {
     font-size: 14px;
     color: #888888;
+
+    ${mq[1]} {
+      font-size: 10px;
+    }
     ${mq[0]} {
       font-size: 10px;
     }
