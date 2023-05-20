@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+const breakpoints = [500, 768, 1024];
+const mq = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
 
 export const Container = styled.div`
   display: flex;
@@ -16,6 +18,10 @@ export const Wrapper = styled.div`
   width: 512px;
   border: 1px solid #888888;
   padding: 40px 0;
+
+  ${mq[0]} {
+    width: 90%;
+  }
 `;
 
 export const Title = styled.p`
@@ -36,6 +42,10 @@ export const JoinBox = styled.div`
     width: 360px;
     height: 40px;
     padding: 0 4px;
+
+    ${mq[0]} {
+      width: 100%;
+    }
   }
 
   > p {

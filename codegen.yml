@@ -1,6 +1,6 @@
 schema:
-  https://backend-practice.codebootcamp.co.kr/graphql
-  # https://backend11.codebootcamp.co.kr/graphql05
+  # https://backend-practice.codebootcamp.co.kr/graphql
+  https://backend11.codebootcamp.co.kr/graphql05
 generates:
   ./src/commons/types/generated/types.ts:
     plugins:
